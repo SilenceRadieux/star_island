@@ -15,25 +15,60 @@
     background-image: url("../assets/pack_graphique/Wallpaper4_\(1\).png");
       background-size: cover;
       background-repeat: no-repeat;
+      height: 100vh;
 
   }
   
   .class-main {
-      display: flex;
+      display: fixed;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      text-align: center;
+      top: 50%;
+      /* height: 100vh; */
   }
   
   .section-timer {
-      display: flex;
+      display: fixed;
       justify-content: center;
       align-items: center;
-      font-size: 50vh;
+      font-size: 25vh;
+      top: 50%;
   }
-  
-  #countdown {
-      color: white;
-      font-family: 'Iceland';
-      font-size: 10vh;
+
+#countdown {
+  color: white;
+  font-family: 'Iceland';
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 10vh;
+  /* font-size: 10vh; */
+}
+
+#btn-discord {
+  position: fixed;
+  bottom: 40;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 10vh;
+  width: 10vw;
+  background-color : transparent;
+  border: none;
+}
+
+#offcanvasBottom {
+  background-color: transparent;
+  border: none;
+  backdrop-filter: blur(10px);
+}
+
+#logos_reseaux {
+  margin: auto;
+}
+
+  @media (max-width: 845px) {
+    #countdown {
+      font-size: 5vh;
+    }
   }

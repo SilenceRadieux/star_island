@@ -12,7 +12,7 @@ function updateCountdown() {
         var seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
         var countdownElement = document.getElementById('countdown');
-        countdownElement.innerHTML = days + 'j ' + hours + 'h ' + minutes + 'm ' + seconds + 's';
+        countdownElement.innerHTML = days + 'j :' + hours + 'h :' + minutes + 'm :' + seconds + 's';
 
         setTimeout(updateCountdown, 1000); // Met à jour le décompte toutes les secondes
     } else {
@@ -22,3 +22,5 @@ function updateCountdown() {
 }
 
 updateCountdown();
+
+

@@ -17,11 +17,7 @@
     </header>
 <main>
 
-<?php 
 
-require_once 'teaser/teaser.php';
-
-?>
 
 </main>
 
