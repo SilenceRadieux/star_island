@@ -1,4 +1,6 @@
-<?php      require_once 'config/function.php';
+
+
+    <?php      require_once 'config/function.php';
             require_once 'inc/header.inc.php';
 
             if (isset($_GET['a']) && $_GET['a']=='dis'){
@@ -12,8 +14,31 @@
             }
             ?>
 
+    </header>
+<main>
 
+<?php 
+
+require_once 'teaser/teaser.php';
+
+?>
+
+</main>
+
+<footer>
 
 
 
 <?php     require_once 'inc/footer.inc.php';          ?>
+
+
+</footer>
+
+</body>
+</html>
+
+
+
+
+
+

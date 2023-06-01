@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'Iceland';
+    src: url("../assets/Iceland-Regular.ttf") format('truetype');
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+  }
+  
+  body {
+    background-image: url("../assets/pack_graphique/Wallpaper4_\(1\).png");
+      background-size: cover;
+      background-repeat: no-repeat;
+
+  }
+  
+  .class-main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+  }
+  
+  .section-timer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 50vh;
+  }
+  
+  #countdown {
+      color: white;
+      font-family: 'Iceland';
+      font-size: 10vh;
+  }
