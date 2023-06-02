@@ -1,4 +1,5 @@
-<html lang="en">
+<!Doctype html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,26 +16,23 @@
 
 
     </main>
-   
-</div>
 
 
 
 <footer>
-<button id="btn-discord" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"><img src="../assets/pack_graphique/Discord.png" alt="Boutton d'accès aux réseaux sociaux" height="100vh"></button>
+<button id="btn-discord" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"><img src="../assets/pack_graphique/Discord.png" alt="Boutton d'accès aux réseaux sociaux" height="100"></button>
 
-<div id="offcanvasBottom" class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+<div id="offcanvasBottom" class="offcanvas offcanvas-bottom" tabindex="-1">
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasBottomLabel">Nos réseaux sociaux</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
-  <div id="Logos_reseaux" class="offcanvas-body small">
-    <img src="../assets/pack_graphique/Discord.png" alt="discord" height="100vh">
-    <img src="../assets/pack_graphique/logo_twitter.png" alt="twitter" height="100vh">
-    <img src="../assets/pack_graphique/logo_twitch.png" alt="twitch" height="100vh">
-    <img src="../assets/pack_graphique/logo_youtube.png" alt="youtube" height="100vh">
-    <img src="../assets/pack_graphique/logo_instagram.png" alt="instagram" height="100vh">
-    <img src="../assets/pack_graphique/logo_tiktok.png" alt="tiktok" height="100vh">
+  <div id="logos_reseaux" class="offcanvas-body small">
+    <img src="../assets/pack_graphique/Discord.png" alt="discord" height="100">
+    <img src="../assets/pack_graphique/logo_twitter.png" alt="twitter" height="100">
+    <img src="../assets/pack_graphique/logo_twitch.png" alt="twitch" height="100">
+    <img src="../assets/pack_graphique/logo_youtube.png" alt="youtube" height="100">
+    <img src="../assets/pack_graphique/logo_instagram.png" alt="instagram" height="100">
+    <img src="../assets/pack_graphique/logo_tiktok.png" alt="tiktok" height="100">
   </div>
 </div>
 </footer>

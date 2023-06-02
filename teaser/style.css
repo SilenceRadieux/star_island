@@ -5,50 +5,41 @@
 
 
 
-* {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-  }
   
   body {
-    background-image: url("../assets/pack_graphique/Wallpaper4_\(1\).png");
+    background-image:  url("../assets/pack_graphique/Wallpaper4_(1).png");
+    background-position: center;
+    width: 100vw;
+    background-blend-mode: darken;
       background-size: cover;
       background-repeat: no-repeat;
-      height: 100vh;
-
+      margin: 0;
+      height: 100%;
+      overflow: hidden;
   }
   
   .class-main {
-      display: fixed;
       justify-content: center;
       align-items: center;
       text-align: center;
-      top: 50%;
-      /* height: 100vh; */
+      margin-top: 20%;
   }
   
   .section-timer {
-      display: fixed;
       justify-content: center;
       align-items: center;
       font-size: 25vh;
-      top: 50%;
   }
 
 #countdown {
   color: white;
   font-family: 'Iceland';
-  justify-content: center;
-  align-items: center;
-  text-align: center;
   font-size: 10vh;
-  /* font-size: 10vh; */
 }
 
 #btn-discord {
   position: fixed;
-  bottom: 40;
+  bottom: 5vh;
   left: 50%;
   transform: translateX(-50%);
   height: 10vh;
@@ -60,15 +51,31 @@
 #offcanvasBottom {
   background-color: transparent;
   border: none;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
+  height: 25vh;
 }
 
 #logos_reseaux {
-  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@media (min-width: 845px) {
+  body {
+    height: 100vh;
+  }
 }
 
   @media (max-width: 845px) {
+    body {
+      height: 100vh;
+    }
     #countdown {
       font-size: 5vh;
+    }
+    #logos_reseaux {
+      display: flex;
+      justify-content: space-around;
     }
   }
