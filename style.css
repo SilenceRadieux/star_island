@@ -1,0 +1,122 @@
+@font-face {
+  font-family: 'Iceland';
+  src: url("../assets/Iceland-Regular.ttf") format('truetype');
+}
+
+
+
+body {
+  background-color: black;
+  background-position: center;
+  width: 100vw;
+  background-blend-mode: darken;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+h2 {
+  font-family: 'Iceland';
+}
+
+#logo_starisland {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 45%;
+  margin-top: 20px;
+}
+
+#text_countdown {
+  color: white;
+}
+
+.class-main {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.section-timer {
+    justify-content: center;
+    align-items: center;
+    font-size: 10vh;
+}
+
+#text_presentation {
+  color: white;
+  font-family: 'Iceland';
+  text-align: center;
+  font-size: 30px;
+  margin-top: 10vh;
+  margin-left: 10vh;
+  margin-right: 10vh;
+}
+
+#countdown {
+color: white;
+font-family: 'Iceland';
+margin-bottom: 10vh;
+}
+
+#btn-discord {
+position: fixed;
+bottom: 5vh;
+left: 45%;
+height: 10vh;
+width: 10vw;
+background-color: transparent;
+border: none;
+}
+
+#offcanvasBottom {
+background-color: transparent;
+border: none;
+backdrop-filter: blur(5px);
+height: 20vh;
+}
+
+#logos_reseaux {
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+
+
+
+
+@media screen  and (max-width: 627px) {
+
+
+
+#offcanvasBottom {
+height: 80vh;
+}
+
+#logos_reseaux {
+  rotate: 90deg;
+  width: 100vw;
+  height: 80vh;
+}
+
+#logos_reseaux>img {
+  display: flex;
+  justify-content: space-around;
+  height: auto;
+  width: 18%;
+  rotate: 270deg;
+}
+
+#btn-discord {
+  position: fixed;
+  bottom: 5vh;
+  left: 35%;
+}
+
+body {
+  overflow: visible;
+}
+}
+
