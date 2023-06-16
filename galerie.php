@@ -13,11 +13,10 @@
             }
             ?>
 
-<?php      require_once 'inc/body.home.inc.php'; ?>
+<?php      require_once 'inc/body.galerie.inc.php'; ?>
 
 
 <?php     require_once 'inc/footer.inc.php';          ?>
-
 
 
 

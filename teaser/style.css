@@ -5,19 +5,29 @@
 
 
 
-
 body {
-  background-image:  url("../assets/pack_graphique/Wallpaper4_(1).png");
+  background-color: black;
   background-position: center;
   width: 100vw;
   background-blend-mode: darken;
     background-size: cover;
     background-repeat: no-repeat;
     margin: 0;
-    height: 100%;
+    height: 100vh;
     overflow: hidden;
 }
 
+h2 {
+  font-family: 'Iceland';
+}
+
+#logo_starisland {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 45%;
+  margin-top: 20px;
+}
 
 #text_countdown {
   color: white;
@@ -32,13 +42,23 @@ body {
 .section-timer {
     justify-content: center;
     align-items: center;
-    font-size: 25vh;
+    font-size: 10vh;
+}
+
+#text_presentation {
+  color: white;
+  font-family: 'Iceland';
+  text-align: center;
+  font-size: 30px;
+  margin-top: 10vh;
+  margin-left: 10vh;
+  margin-right: 10vh;
 }
 
 #countdown {
 color: white;
 font-family: 'Iceland';
-font-size: 20vh;
+margin-bottom: 10vh;
 }
 
 #btn-discord {
@@ -55,7 +75,7 @@ border: none;
 background-color: transparent;
 border: none;
 backdrop-filter: blur(5px);
-height: 25vh;
+height: 20vh;
 }
 
 #logos_reseaux {
@@ -66,19 +86,10 @@ align-items: center;
 
 
 
-@media (min-width: 845px) {
-body {
-  height: 100vh;
-}
-}
 
-@media (max-width: 845px) {
-body {
-  height: 100vh;
-}
-#countdown {
-  font-size: 5vh;
-}
+@media screen  and (max-width: 627px) {
+
+
 
 #offcanvasBottom {
 height: 80vh;
@@ -103,4 +114,9 @@ height: 80vh;
   bottom: 5vh;
   left: 35%;
 }
+
+body {
+  overflow: visible;
 }
+}
+
