@@ -24,13 +24,13 @@
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul id="navbar_items" class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href=" <?= GALERIE_PATH; ?> ">Galerie</a>
+                    <a id="nav-link" href=" <?= GALERIE_PATH; ?> ">Galerie</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href=" <?= VIP_PATH; ?> ">Devenir VIP</a>
+                    <a id="nav-link" href=" <?= VIP_PATH; ?> ">Devenir VIP</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href=" <?= SERVEUR_PATH; ?> ">Serveur</a>
+                    <a id="nav-link" href=" <?= SERVEUR_PATH; ?> ">Serveur</a>
                 </li>
                 <!-- <?php     if (admin()):           ?>
                 <li class="nav-item dropdown">
@@ -55,11 +55,11 @@
                 <div id="nav-lateral-item">
                     <li>
                         <img src="./assets/pack_graphique/img-btn-tutoriels.png" alt="bouton tutoriels" height="25px">
-                        <a href="#">Tutoriels</a>
+                        <a id="nav_tuto" href="#">Tutoriels</a>
                     </li>
                     <li>
                         <img src="./assets/pack_graphique/img-btn-event.png" alt="bouton event" height="25px">
-                        <a href="#">Event</a>
+                        <a id="nav_event" href="#">Event</a>
                     </li>
                 </div> 
         </div>

@@ -56,7 +56,7 @@ table {
     margin: 0 auto; 
   } */
   
-#main_home {
+/* #main_home {
     height: 100vh;
     width: 100vw;
     background-image: url("../pack_graphique/img-body-background.png");
@@ -74,10 +74,17 @@ table {
     background-size: cover;
     color: white;
     font-family: Iceland;
-}
+} */
 
 body > header > #navbar {
     background-color: #000000;
+}
+
+#nav-link {
+    text-decoration: none;
+    color: white;
+    font-family: 'Iceland';
+    font-size: 30px;
 }
 
 #navbar_items {
@@ -91,11 +98,21 @@ body > header > #navbar {
     top: 10px;
 }
 
-#nav-lateral-item {
-    list-style-type: none;
-    margin-left: 17vw;
-    font-size: 15px;
+#nav_tuto {
+    text-decoration: none;
+    font-family: 'Iceland';
+    font-size: 20px;
+    color: white;
 }
+
+#nav_event {
+    text-decoration: none;
+    font-family: 'Iceland';
+    font-size: 20px;
+    color: white;
+}
+
+
 #btn-discord {
     position: fixed;
     bottom: 5vh;
@@ -162,7 +179,7 @@ body > header > #navbar {
         background-color: transparent;
         --r: calc(var(--position) - var(--offset));
         --abs: max(calc(var(--r) * -1), var(--r));
-        transition: all 0.25s linear;
+        transition: all 15ms linear;
         transform: rotateY(calc(-10deg * var(--r)))
           translateX(calc(-2500px * var(--r)));
         z-index: calc((var(--position) - var(--abs)));
@@ -181,6 +198,16 @@ body > header > #navbar {
         background-color: transparent
       }
     
+      .radio-btn {
+        margin: 20px;
+      }
+
+      #acc_gal_btn {
+        width: 30px;
+        height: 30px;
+        background-color: transparent;
+        z-index: 1;
+      }
       
       input:nth-of-type(1) {
         grid-column: 2 / 3;
@@ -236,9 +263,9 @@ body > header > #navbar {
 .carousel {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 50%;
   transform-style: preserve-3d; 
-  animation: rotate360 60s infinite forwards linear;
+  animation: rotate360 10s infinite forwards linear;
 }
 .carousel__face { 
   position: absolute;

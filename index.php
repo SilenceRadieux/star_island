@@ -15,6 +15,8 @@
 
 <?php      require_once 'inc/body.home.inc.php'; ?>
 
+<?php      require_once 'inc/body.comment.inc.php'; ?>
+
 
 <?php     require_once 'inc/footer.inc.php';          ?>
 

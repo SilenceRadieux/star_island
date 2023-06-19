@@ -4,7 +4,6 @@
     <div class="about-pos">
       <div class="section-title">
         <h2>L'équipe</h2>
-        <div class="line" data-aos="zoom-in"></div>
       </div>
       <div class="ios-segmented-control">
         <span class="selection"></span>
@@ -34,7 +33,7 @@
         </div>
       </div>
 
-      <div>
+      <!-- <div>
         <div class="about">
                       <div id="admin">
                               <div class="about-card">
@@ -199,7 +198,7 @@
                       <div id="number">
                           </div>
                   </div>
-      </div>
+      </div> -->
     </div>
   </div>
 
@@ -212,7 +211,7 @@
 
 /* Global styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Iceland';
   line-height: 1.5;
 }
 
@@ -228,7 +227,9 @@ body {
 }
 
 .section-title h2 {
-  font-size: 24px;
+  font-size: 60px;
+  margin-top: 0;
+  margin-bottom: 40px;
   font-weight: bold;
   color: #333;
 }

@@ -24,3 +24,4 @@ const GALERIE_PATH='/star_island_final/galerie.php';
 const VIP_PATH='/star_island_final/vip.php';
 const SERVEUR_PATH='/star_island_final/serveur.php';
 const EVENT_PATH='/star_island_final/event.php';
+const COMMENT_PATH='/star_island_final/comment.php';
