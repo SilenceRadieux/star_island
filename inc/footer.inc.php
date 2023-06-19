@@ -7,12 +7,12 @@
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div id="logos_reseaux" class="offcanvas-body small">
-    <img src="./assets/pack_graphique/Discord.png" alt="discord" height="100">
-    <img src="./assets/pack_graphique/logo_twitter.png" alt="twitter" height="100">
-    <img src="./assets/pack_graphique/logo_twitch.png" alt="twitch" height="100">
-    <img src="./assets/pack_graphique/logo_youtube.png" alt="youtube" height="100">
-    <img src="./assets/pack_graphique/logo_instagram.png" alt="instagram" height="100">
-    <img src="./assets/pack_graphique/logo_tiktok.png" alt="tiktok" height="100">
+    <img id="img_logos_reseaux" src="./assets/pack_graphique/Discord.png" alt="discord" height="100">
+    <img id="img_logos_reseaux" src="./assets/pack_graphique/logo_twitter.png" alt="twitter" height="100">
+    <img id="img_logos_reseaux" src="./assets/pack_graphique/logo_twitch.png" alt="twitch" height="100">
+    <img id="img_logos_reseaux" src="./assets/pack_graphique/logo_youtube.png" alt="youtube" height="100">
+    <img id="img_logos_reseaux" src="./assets/pack_graphique/logo_instagram.png" alt="instagram" height="100">
+    <img id="img_logos_reseaux" src="./assets/pack_graphique/logo_tiktok.png" alt="tiktok" height="100">
   </div>
 </div>
 </footer>

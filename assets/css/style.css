@@ -153,10 +153,11 @@ body > header > #navbar {
         grid-column: 1 / 8;
         width: 68vw;
         height: 400px;
+        margin-top: 0;
+        margin-bottom: 600px;
         display: flex;
         align-items: center;
         justify-content: center;
-        overflow: hidden;
         transform-style: preserve-3d;
         perspective: 600px;
         --items: 3;
@@ -248,6 +249,7 @@ body > header > #navbar {
     font-size: 20px;
     font-family: Iceland;
     color: white;
+    margin-top: 500px;
     /* margin-bottom: 200px; */
     
 }
@@ -373,4 +375,88 @@ span {
     right: 10%;
   }
 
-  
+  /* CSS RESPONSIVE */
+
+  @media screen and (max-width: 800px) {
+    #full-carousel {
+      height: 500px;
+      margin-top: 15vh;
+      margin-bottom: 60px;
+      display: grid;
+      grid-template-rows: 300px 100px;
+      grid-template-columns: 1fr 30px 30px 30px 1fr;
+      align-items: center;
+      justify-items: center;
+    }
+
+    main#carousel {
+      grid-row: 1 / 2;
+      grid-column: 1 / 8;
+      width: 68vw;
+      height: 260px;
+      margin-top: 120px;
+      margin-bottom: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform-style: preserve-3d;
+      perspective: 600px;
+      --items: 3;
+      --middle: 3;
+      --position: 1;
+      pointer-events: none;
+      overflow: scroll;
+    }
+
+    .container {
+      width: 90vw;
+      height: 30vh;
+    }
+    #acc_gal_btn {
+      width: 30px;
+      height: 30px;
+      margin-bottom: 300px;
+      background-color: transparent;
+      z-index: 1;
+    }
+    #presentation_paragraph {
+      width: 90vw;
+      font-size: 20px;
+    }
+
+    #btn-discord {
+      position: fixed;
+      bottom: 5vh;
+      left: 33%;
+      height: 10vh;
+      width: 10vw;
+      background-color: transparent;
+      border: none;
+      }
+      
+      #offcanvasBottom {
+      background-color: transparent;
+      border: none;
+      overflow: visible;
+      backdrop-filter: blur(5px);
+      height: 100vh;
+      }
+
+      #offcanvasBottom > .offcanvas-body {
+      background-color: transparent;
+      overflow-y: visible;
+      }
+      
+      #logos_reseaux {
+      display: flex;
+      height: 80vh;
+      align-items: center;
+      rotate: 90deg;
+      }
+      #img_logos_reseaux {
+      margin: 20px;
+      height: 50px;
+      width: 50px;
+      rotate: 270deg;
+      }
+  }
