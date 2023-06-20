@@ -127,7 +127,7 @@ body > header > #navbar {
     background-color: transparent;
     border: none;
     backdrop-filter: blur(5px);
-    height: 30vh;
+    height: 20vh;
     }
     
     #logos_reseaux {
@@ -346,7 +346,8 @@ span {
 .grid-block {
   width: 30%;
   min-height: 11.25rem;
-  padding: 1rem;
+  margin: 1rem;
+  border: 15px solid #C63757;
 }
 
 .image-grid {
@@ -457,6 +458,24 @@ span {
     25px 25px rgba(4, 140, 231, 0.05);
 }
 
+.tile-link:hover .tile-img11 {
+  box-shadow: 5px 5px rgba(244, 170, 200, 0.4),
+    10px 10px rgba(244, 170, 200, 0.3), 15px 15px rgba(244, 170, 200, 0.2),
+    20px 20px rgba(244, 170, 200, 0.1), 25px 25px rgba(244, 170, 200, 0.05);
+}
+
+.tile-link:hover .tile-img12 {
+  box-shadow: 5px 5px rgba(45, 186, 233, 0.4), 10px 10px rgba(45, 186, 233, 0.3),
+    15px 15px rgba(45, 186, 233, 0.2), 20px 20px rgba(45, 186, 233, 0.1),
+    25px 25px rgba(45, 186, 233, 0.05);
+}
+
+.tile-link:hover .tile-img13 {
+  box-shadow: 5px 5px rgba(214, 221, 244, 0.4),
+    10px 10px rgba(214, 221, 244, 0.3), 15px 15px rgba(214, 221, 244, 0.2),
+    20px 20px rgba(214, 221, 244, 0.1), 25px 25px rgba(214, 221, 244, 0.05);
+}
+
 .lightbox {
   position: fixed;
   top: 0;
@@ -557,6 +576,18 @@ span {
   /* CSS RESPONSIVE */
 
   @media screen and (max-width: 800px) {
+
+    main {
+      margin-top: 100px;
+    }
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1;
+    }
+
     #full-carousel {
       height: 500px;
       margin-top: 15vh;
@@ -638,4 +669,20 @@ span {
       width: 50px;
       rotate: 270deg;
       }
+      .grid-block {
+        min-height: auto;
+        min-width: auto;
+        margin: 0;
+        border: 5px solid #C63757;
+      }
+      
+      #vip_right_img, #vip_left_img {
+        display: none;
+      }
+
+      #vip_text {
+        margin: 10px;
+        overflow: auto;
+      }
   }
+

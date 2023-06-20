@@ -1,6 +1,7 @@
 let actualPage = document.URL;
-console.log(actualPage);
 
+
+let screenWidth = window.innerWidth;
 
 if (actualPage === "http://localhost/star_island_final/") {
     document.body.style.backgroundImage = "url('assets/pack_graphique/img-body-background.png')";
@@ -16,6 +17,9 @@ if (actualPage === "http://localhost/star_island_final/vip.php") {
     document.body.style.backgroundImage = "url('assets/pack_graphique/img-vip-background.png')";
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundRepeat = "no-repeat";
+    if (screenWidth < 800) {
+       document.body.style.overflow="scroll";
+    } 
 }
 if (actualPage === "http://localhost/star_island_final/serveur.php") {
     document.body.style.backgroundImage = "url('assets/pack_graphique/img-serveur-background.png')";
@@ -39,10 +43,3 @@ imageContainers.forEach(function(container) {
   });
 });
 
-// Gestionnaire d'événements de clic pour la fermeture de la lightbox
-lightbox.addEventListener('click', function(e) {
-  // Ferme la lightbox lorsque l'utilisateur clique en dehors de l'image en grand format
-  if (e.target === this || e.target.id === 'close-button') {
-    lightbox.style.display = 'none';
-  }
-});

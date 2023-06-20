@@ -87,7 +87,7 @@
   <div class="grid-block">
     <div class="tile">
       <a class="tile-link" href="#">
-        <img class="tile-img tile-img10 image-container" src="./assets/pack_graphique/star_islannd/paysage2.png">
+        <img class="tile-img tile-img11 image-container" src="./assets/pack_graphique/star_islannd/paysage2.png">
       </a>
     </div>
   </div>
@@ -95,7 +95,7 @@
   <div class="grid-block">
     <div class="tile">
       <a class="tile-link" href="#">
-        <img class="tile-img tile-img10 image-container" src="./assets/pack_graphique/star_islannd/paysage2.png">
+        <img class="tile-img tile-img12 image-container" src="./assets/pack_graphique/star_islannd/paysage2.png">
       </a>
     </div>
   </div>
@@ -103,21 +103,21 @@
   <div class="grid-block">
     <div class="tile">
       <a class="tile-link" href="#">
-        <img class="tile-img tile-img10 image-container" src="./assets/pack_graphique/star_islannd/paysage2.png">
+        <img class="tile-img tile-img13 image-container" src="./assets/pack_graphique/star_islannd/paysage2.png">
       </a>
     </div>
   </div>
   <div class="grid-block">
     <div class="tile">
       <a class="tile-link" href="#">
-        <img class="tile-img tile-img10 image-container" src="./assets/pack_graphique/star_islannd/paysage2.png">
+        <img class="tile-img tile-img14 image-container" src="./assets/pack_graphique/star_islannd/paysage2.png">
       </a>
     </div>
   </div>
 </div>
 </div>
 <div class="lightbox" id="lightbox">
-    <span class="close-button" id="close-button">&times;</span>
+   
     <img src="" alt="Image en grand format" id="lightbox-image">
   </div>
   <div class="background"></div>
