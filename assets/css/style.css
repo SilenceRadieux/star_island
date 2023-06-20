@@ -676,6 +676,15 @@ span {
         border: 5px solid #C63757;
       }
       
+      .lightbox {
+        position: fixed;
+margin-top: 210px;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: none;
+      }
+
       #vip_right_img, #vip_left_img {
         display: none;
       }

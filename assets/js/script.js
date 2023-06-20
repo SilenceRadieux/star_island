@@ -1,5 +1,5 @@
 let actualPage = document.URL;
-
+console.log(actualPage);
 
 let screenWidth = window.innerWidth;
 
@@ -42,4 +42,11 @@ imageContainers.forEach(function(container) {
     lightboxImage.src = container.src;
   });
 });
+
+// Attache un gestionnaire d'événements de clic à la lightbox pour la fermer
+lightbox.addEventListener('click', function() {
+  // Cache la lightbox
+  lightbox.style.display = 'none';
+});
+
 

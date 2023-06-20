@@ -1,4 +1,4 @@
-<main id="main_home">
+<main id="main_home " data-bs-dismiss="offcanvas">
     <h1 id="title_main" >BIENVENUE SUR STAR'ISLAND</h1>
     <div id="full-carousel">
   <input id="acc_gal_btn" class="radio-btn" type="radio" name="position" checked />
