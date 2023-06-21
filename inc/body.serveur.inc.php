@@ -8,7 +8,7 @@
       <div class="ios-segmented-control">
         <span class="selection"></span>
         <div class="option">
-          <input type="radio" id="tous" name="sample" value="metro" checked>
+          <input type="radio" id="tous" name="sample" value="tous" checked>
           <label for="tous"><span>Tous</span></label>
         </div>
         <div class="option">
@@ -16,8 +16,8 @@
           <label for="admin"><span>Admin</span></label>
         </div>
         <div class="option">
-          <input type="radio" id="staff" name="sample" value="staff">
-          <label for="staff"><span>Staff/Modérateur</span></label>
+          <input type="radio" id="modo" name="sample" value="modo">
+          <label for="modo"><span>Staff/Modérateur</span></label>
         </div>
         <div class="option">
           <input type="radio" id="dev" name="sample" value="dev">
@@ -33,174 +33,34 @@
         </div>
       </div>
 
-      <!-- <div>
-        <div class="about">
-                      <div id="admin">
-                              <div class="about-card">
-                  <img src="" alt="">
-                  <div class="card-name"></div>
-                  <div class="card-title">Admin</div>
-                </div>
-                              <div class="about-card">
-                  <img src="" alt="">
-                  <div class="card-name"</div>
-                  <div class="card-title">Admin</div>
-                </div>
-                              <div class="about-card">
-                  <img src="" alt="">
-                  <div class="card-name"></div>
-                  <div class="card-title">Admin</div>
-                </div>
-                              <div class="about-card">
-                  <img src="" alt="">
-                  <div class="card-name"></div>
-                  <div class="card-title">Admin</div>
-                </div>
-                              <div class="about-card">
-                  <img src="" alt="">
-                  <div class="card-name"></div>
-                  <div class="card-title">Admin</div>
-                </div>
-                          </div>
-                      <div id="staff">
-                              <div class="about-card">
-                  <img src="" alt="">
-                  <div class="card-name"></div>
-                  <div class="card-title">Modérateur</div>
-                </div>
-                              <div class="about-card">
-                  <img src="" alt="">
-                  <div class="card-name"></div>
-                  <div class="card-title">Modérateur</div>
-                </div>
-                              <div class="about-card">
-                  <img src="" alt="">
-                  <div class="card-name"></div>
-                  <div class="card-title">Modérateur</div>
-                </div>
-                              <div class="about-card">
-                  <img src="" alt="">
-                  <div class="card-name"></div>
-                  <div class="card-title">Modérateur</div>
-                </div>
-                              <div class="about-card">
-                  <img src="" alt="">
-                  <div class="card-name"></div>
-                  <div class="card-title">Modérateur</div>
-                </div>
-                              <div class="about-card">
-                  <img src="" alt="">
-                  <div class="card-name"></div>
-                  <div class="card-title">Modérateur</div>
-                </div>
-                              <div class="about-card">
-                  <img src="" alt="">
-                  <div class="card-name"></div>
-                  <div class="card-title">Modérateur</div>
-                </div>
-                              <div class="about-card">
-                  <img src="" alt="">
-                  <div class="card-name"></div>
-                  <div class="card-title">Modérateur</div>
-                </div>
-                          </div>
-                      <div id="dev">
-                              <div class="about-card">
-                  <img src="" alt="">
-                  <div class="card-name"></div>
-                  <div class="card-title">Développeur</div>
-                </div>
-                              <div class="about-card">
-                  <img src="" alt="">
-                  <div class="card-name"></div>
-                  <div class="card-title">Développeur</div>
-                </div>
-                              <div class="about-card">
-                  <img src="" alt="">
-                  <div class="card-name"></div>
-                  <div class="card-title">Développeuse</div>
-                </div>
-                              <div class="about-card">
-                  <img src="" alt="">
-                  <div class="card-name"></div>
-                  <div class="card-title">Développeur</div>
-                </div>
-                              <div class="about-card">
-                  <img src="" alt="">
-                  <div class="card-name"></div>
-                  <div class="card-title">Développeur</div>
-                </div>
-                              <div class="about-card">
-                  <img src="" alt="">
-                  <div class="card-name"></div>
-                  <div class="card-title">Développeur</div>
-                </div>
-                              <div class="about-card">
-                  <img src="" alt="">
-                  <div class="card-name"></div>
-                  <div class="card-title">Développeur</div>
-                </div>
-                              <div class="about-card">
-                  <img src="" alt="">
-                  <div class="card-name"></div>
-                  <div class="card-title">Développeur</div>
-                </div>
-                          </div>
-                      <div id="mapper">
-                              <div class="about-card">
-                  <img src="" alt="">
-                  <div class="card-name"></div>
-                  <div class="card-title">Mapper</div>
-                </div>
-                          </div>
-                      <div id="helper">
-                              <div class="about-card">
-                  <img src="" alt="">
-                  <div class="card-name"></div>
-                  <div class="card-title">Helper</div>
-                </div>
-                              <div class="about-card">
-                  <img src="" alt="">
-                  <div class="card-name"></div>
-                  <div class="card-title">Helper</div>
-                </div>
-                              <div class="about-card">
-                  <img src="" alt="">
-                  <div class="card-name"></div>
-                  <div class="card-title">Helper</div>
-                </div>
-                              <div class="about-card">
-                  <img src="" alt="">
-                  <div class="card-name"></div>
-                  <div class="card-title">Helper</div>
-                </div>
-                              <div class="about-card">
-                  <img src="" alt="">
-                  <div class="card-name"></div>
-                  <div class="card-title">Helper</div>
-                </div>
-                              <div class="about-card">
-                  <img src="" alt="">
-                  <div class="card-name"></div>
-                  <div class="card-title">Helper</div>
-                </div>
-                              <div class="about-card">
-                  <img src="" alt="">
-                  <div class="card-name"></div>
-                  <div class="card-title">Helper</div>
-                </div>
-                              <div class="about-card">
-                  <img src="" alt="">
-                  <div class="card-name"></div>
-                  <div class="card-title">Helper</div>
-                </div>
-                          </div>
-                      <div id="number">
-                          </div>
-                  </div>
-      </div> -->
     </div>
   </div>
+
+	<div class="wrapper">
+		<div class="gallery">
+			<ul>
+				<li class="tous admin"><img src="./assets/pack_graphique/star_islannd/amanda.png"></li>
+				<li class="tous admin"><img src="./assets/pack_graphique/star_islannd/charmilia.png"></li>
+				<li class="tous modo"><img src="./assets/pack_graphique/star_islannd/conceptrice.png"></li>
+				<li class="tous modo"><img src="./assets/pack_graphique/star_islannd/ellios.png"></li>
+				<li class="tous dev"><img src="./assets/pack_graphique/star_islannd/esmeralda.png"></li>
+				<li class="tous dev"><img src="./assets/pack_graphique/star_islannd/geoffroy.png"></li>
+				<li class="tous mapper"><img src="./assets/pack_graphique/star_islannd/hans.png"></li>
+				<li class="tous mapper"><img src="./assets/pack_graphique/star_islannd/predation.png"></li>
+				<li class="tous helper"><img src="./assets/pack_graphique/star_islannd/raoul.png"></li>
+        <li class="tous helper"><img src="./assets/pack_graphique/star_islannd/"></li>
+				<li class="tous"><img src=""></li>
+				<li class="tous"><img src=""></li>
+        <li class="tous"><img src=""></li>
+				<li class="tous"><img src=""></li>
+				<li class="tous"><img src=""></li>
+				<li class="tous"><img src=""></li>
+				<li class="tous"><img src=""></li>
+        <li class="tous"><img src=""></li>
+				<li class="tous"><img src=""></li>
+				<li class="tous"><img src=""></li>
+			</ul>
+		</div>
 
   <style>/* Reset default styles */
 * {

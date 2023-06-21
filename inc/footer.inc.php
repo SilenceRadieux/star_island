@@ -16,6 +16,8 @@
               <a href=""><img id="img_logos_reseaux" src="./assets/pack_graphique/logo_tiktok.png" alt="tiktok" height="100"></a>
     </div>
   </div>
+
+  
 </footer>
 </body>
 
