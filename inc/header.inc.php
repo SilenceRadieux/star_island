@@ -59,7 +59,7 @@
                     </li>
                     <li>
                         <img src="./assets/pack_graphique/img-btn-event.png" alt="bouton event" height="25px">
-                        <a id="nav_event" href="#">Event</a>
+                        <a id="nav_event" href=" <?= EVENT_PATH; ?> ">Event</a>
                     </li>
                 </div> 
         </div>

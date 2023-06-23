@@ -1,5 +1,8 @@
 <main id="main_home " data-bs-dismiss="offcanvas">
     <h1 id="title_main" >BIENVENUE SUR STAR'ISLAND</h1>
+    <div class="button-container">
+                <button onclick="window.location.href='avis.php';" id="btn-second-page" class="button">Donnez-nous votre avis !</button>
+            </div>
     <div id="full-carousel">
   <input id="acc_gal_btn" class="radio-btn" type="radio" name="position" checked />
   <input id="acc_gal_btn" class="radio-btn" type="radio" name="position" />
@@ -21,29 +24,13 @@
     <div class="carousel__face"><span></span></div>
   </div>
 </div>
-    <!-- <div class="carousel-inner">
-        <div class="carousel-item-active">
-            <img src="./assets/pack_graphique/Loading4_(1).png" class="d-block " alt="Wild Landscape" />
-        </div>
-        <div class="carousel-item">
-            <img src="./assets/pack_graphique/Loading4_(2).png" class="d-block " alt="Camera" />
-        </div>
-        <div class="carousel-item">
-            <img src="https://picsum.photos/200/300?random=3" class="d-block " alt="Exotic Fruits" />
-        </div>
-    </div> -->
-    <!-- <button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleControls" data-mdb-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-mdb-target="#carouselExampleControls" data-mdb-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button> -->
-</div>
-    </div>
-    <div class="item"></div>
+
+
+
 </main>
+
+
+
 
 
 

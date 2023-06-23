@@ -39,16 +39,26 @@
 	<div class="wrapper">
 		<div class="gallery">
 			<ul>
-				<li class="tous admin"><img src="./assets/pack_graphique/star_islannd/amanda.png"></li>
+				<li class="tous admin"><img src="./assets/pack_graphique/star_islannd/amanda.png"><p>admin</p></li>
+        
 				<li class="tous admin"><img src="./assets/pack_graphique/star_islannd/charmilia.png"></li>
+ 
 				<li class="tous modo"><img src="./assets/pack_graphique/star_islannd/conceptrice.png"></li>
+
 				<li class="tous modo"><img src="./assets/pack_graphique/star_islannd/ellios.png"></li>
+
 				<li class="tous dev"><img src="./assets/pack_graphique/star_islannd/esmeralda.png"></li>
+
 				<li class="tous dev"><img src="./assets/pack_graphique/star_islannd/geoffroy.png"></li>
+
 				<li class="tous mapper"><img src="./assets/pack_graphique/star_islannd/hans.png"></li>
+
 				<li class="tous mapper"><img src="./assets/pack_graphique/star_islannd/predation.png"></li>
+
 				<li class="tous helper"><img src="./assets/pack_graphique/star_islannd/raoul.png"></li>
+
         <li class="tous helper"><img src="./assets/pack_graphique/star_islannd/"></li>
+
 				<li class="tous"><img src=""></li>
 				<li class="tous"><img src=""></li>
         <li class="tous"><img src=""></li>

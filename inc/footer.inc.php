@@ -8,12 +8,12 @@
 
 
     <div id="logos_reseaux" class="offcanvas-body small">
-      <a href="https://discord.gg/YtHr3hZTc5" ><img id="img_logos_reseaux" src="./assets/pack_graphique/Discord.png" alt="discord" height="100"></a>
-      <a href=""><img id="img_logos_reseaux" src="./assets/pack_graphique/logo_twitter.png" alt="twitter" height="100"></a>
-        <a href=""><img id="img_logos_reseaux" src="./assets/pack_graphique/logo_twitch.png" alt="twitch" height="100"></a>
-          <a href=""><img id="img_logos_reseaux" src="./assets/pack_graphique/logo_youtube.png" alt="youtube" height="100"></a>
-            <a href=""><img id="img_logos_reseaux" src="./assets/pack_graphique/logo_instagram.png" alt="instagram" height="100"></a>
-              <a href=""><img id="img_logos_reseaux" src="./assets/pack_graphique/logo_tiktok.png" alt="tiktok" height="100"></a>
+      <a href="https://discord.gg/YtHr3hZTc5" target="_blank" ><img id="img_logos_reseaux" src="./assets/pack_graphique/Discord.png" alt="discord" height="100"></a>
+      <a href="https://twitter.com/StarIslandfr" target="_blank"><img id="img_logos_reseaux" src="./assets/pack_graphique/logo_twitter.png" alt="twitter" height="100"></a>
+        <a href="https://www.twitch.tv/madiins" target="_blank"><img id="img_logos_reseaux" src="./assets/pack_graphique/logo_twitch.png" alt="twitch" height="100"></a>
+          <a href="https://www.youtube.com/@starisland8840" target="_blank"><img id="img_logos_reseaux" src="./assets/pack_graphique/logo_youtube.png" alt="youtube" height="100"></a>
+            <a href="https://www.instagram.com/starisland.fr/" target="_blank"><img id="img_logos_reseaux" src="./assets/pack_graphique/logo_instagram.png" alt="instagram" height="100"></a>
+              <a href="https://www.tiktok.com/@star.island?lang=fr" target="_blank"><img id="img_logos_reseaux" src="./assets/pack_graphique/logo_tiktok.png" alt="tiktok" height="100"></a>
     </div>
   </div>
 

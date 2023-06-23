@@ -1,5 +1,5 @@
 
-    <?php      require_once 'config/function.php';
+<?php      require_once 'config/function.php';
             require_once 'inc/header.inc.php';
 
             if (isset($_GET['a']) && $_GET['a']=='dis'){
@@ -13,16 +13,9 @@
             }
             ?>
 
-<?php      require_once 'inc/body.home.inc.php'; ?>
 
+
+<?php      require_once 'inc/body.avis.inc.php'; ?>
 
 
 <?php     require_once 'inc/footer.inc.php';          ?>
-
-
-
-
-
-
-
-

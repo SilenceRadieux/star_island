@@ -49,6 +49,11 @@ table {
 
   body {
     overflow: hidden;
+
+  }
+
+  #main_home {
+    height: 200vh;
   }
   
   /* .container {
@@ -112,6 +117,119 @@ body > header > #navbar {
     color: white;
 }
 
+#btn-second-page {
+    position: fixed;
+    bottom: 5vh;
+    text-decoration: none;
+    font-family: 'Iceland';
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+}
+
+.second-page-container {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+}
+
+.comment-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.comment {
+  position: relative;
+  width: 40vw;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 100px;
+}
+
+.comment:nth-child(even) {
+  margin-left: auto;
+}
+
+.comment:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid #f5f5f5;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+
+.comment p {
+  margin: 0;
+}
+
+.star-rating {
+  unicode-bidi: bidi-override;
+  direction: lrt;
+  font-size: 25px;
+
+}
+
+.star-rating > span:after {
+  position: relative;
+  color: white;
+ 
+  width: 25px;
+   content: "\2605";
+
+}
+
+span.star-filled{
+  color: #FFD700;
+}
+
+
+
+.star-rating > input {
+  display: none;
+}
+
+
+
+#comments {
+  height: 420px; /* Ajustez cette valeur en fonction de vos besoins */
+  overflow-y: auto; /* Ajoute une barre de défilement verticale si nécessaire */
+}
+
+
+.comment-form {
+
+  margin-bottom: 100px;
+  margin-left: 550px;
+}
+
+.comment-form label {
+  display: block;
+  font-weight: bold;
+}
+
+.comment-form input[type="radio"] {
+  margin-right: 5px;
+}
+
+.comment-form textarea {
+  width: 60%;
+  height: 100px;
+
+}
+
+.comment-form button {
+  display: block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
 #btn-discord {
     position: fixed;
@@ -136,6 +254,9 @@ body > header > #navbar {
     align-items: center;
     }
 
+    footer > .btn-primary:focus {
+        box-shadow: none;
+    }
     
     #full-carousel {
         height: 500px;
@@ -607,9 +728,12 @@ span {
   }
   
   h1 {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Iceland', sans-serif;
     color: #FFF;
     font-size: 2.3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   em {
@@ -698,6 +822,40 @@ span {
     }
   }
 
+#countdown {
+    margin-left: 600px;
+    margin-top: 100px;
+    font-family: "Iceland";
+    color: white;
+  }
+
+  #timer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+#timer span {
+    font-size: 100px;
+    margin: 0 10px;
+  }
+
+#presentation_event {
+    font-family: "Iceland";
+    color: white;
+    margin-left: 860px;
+    margin-top: 100px;
+    width: 40vw;
+    font-size: 25px;
+  }
+
+
+#img-event {
+  position: absolute; 
+  margin-left: 10vw;
+  }
+
+  
   /* CSS RESPONSIVE */
 
   @media screen and (max-width: 800px) {
@@ -707,11 +865,23 @@ span {
     }
 
     header {
+      display: block;
+      position: sticky;
+      text-align: left;
+    }
+
+    header > navbar {
       position: fixed;
+      height: 10vh;
       width: 100%;
       top: 0;
+      /* .mb-5 {
+        margin-bottom: 3rem!important;
+    } */
       z-index: 1;
     }
+
+
 
     #full-carousel {
       height: 500px;
@@ -774,7 +944,7 @@ span {
       border: none;
       overflow: visible;
       backdrop-filter: blur(5px);
-      height: 100vh;
+      height: 80vh;
       }
 
       #offcanvasBottom > .offcanvas-body {
