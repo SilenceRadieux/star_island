@@ -1,11 +1,11 @@
-<main>
+<main id="main-event">
 
 <div class="page-section" id="About">
     <div class="about-pos">
       <div class="section-title">
         <h2>L'équipe</h2>
       </div>
-      <div class="ios-segmented-control">
+      <div class="ios-segmented-control" id="responsive-ios-segmented-control">
         <span class="selection"></span>
         <div class="option">
           <input type="radio" id="tous" name="sample" value="tous" checked>
@@ -36,39 +36,39 @@
     </div>
   </div>
 
-	<div class="wrapper">
+	<div class="wrapper" id="responsive-wrapper">
 		<div class="gallery">
 			<ul>
-				<li class="tous admin"><img src="./assets/pack_graphique/star_islannd/amanda.png"><p>admin</p></li>
+				<li class="tous admin" id="responsive-staff"><img src="./assets/pack_graphique/star_islannd/amanda.png" id="responsive-staff-img"></li>
         
-				<li class="tous admin"><img src="./assets/pack_graphique/star_islannd/charmilia.png"></li>
+				<li class="tous admin" id="responsive-staff"><img src="./assets/pack_graphique/star_islannd/charmilia.png" id="responsive-staff-img"></li>
  
-				<li class="tous modo"><img src="./assets/pack_graphique/star_islannd/conceptrice.png"></li>
+				<li class="tous modo" id="responsive-staff"><img src="./assets/pack_graphique/star_islannd/conceptrice.png" id="responsive-staff-img"></li>
 
-				<li class="tous modo"><img src="./assets/pack_graphique/star_islannd/ellios.png"></li>
+				<li class="tous modo" id="responsive-staff"><img src="./assets/pack_graphique/star_islannd/ellios.png" id="responsive-staff-img"></li>
 
-				<li class="tous dev"><img src="./assets/pack_graphique/star_islannd/esmeralda.png"></li>
+				<li class="tous dev" id="responsive-staff"><img src="./assets/pack_graphique/star_islannd/esmeralda.png" id="responsive-staff-img"></li>
 
-				<li class="tous dev"><img src="./assets/pack_graphique/star_islannd/geoffroy.png"></li>
+				<li class="tous dev" id="responsive-staff"><img src="./assets/pack_graphique/star_islannd/geoffroy.png" id="responsive-staff-img"></li>
 
-				<li class="tous mapper"><img src="./assets/pack_graphique/star_islannd/hans.png"></li>
+				<li class="tous mapper" id="responsive-staff"><img src="./assets/pack_graphique/star_islannd/hans.png" id="responsive-staff-img"></li>
 
-				<li class="tous mapper"><img src="./assets/pack_graphique/star_islannd/predation.png"></li>
+				<li class="tous mapper" id="responsive-staff"><img src="./assets/pack_graphique/star_islannd/predation.png" id="responsive-staff-img"></li>
 
-				<li class="tous helper"><img src="./assets/pack_graphique/star_islannd/raoul.png"></li>
+				<li class="tous helper" id="responsive-staff"><img src="./assets/pack_graphique/star_islannd/raoul.png" id="responsive-staff-img"></li>
 
-        <li class="tous helper"><img src="./assets/pack_graphique/star_islannd/"></li>
+        <li class="tous helper" id="responsive-staff"><img src="./assets/pack_graphique/star_islannd/" id="responsive-staff-img"></li>
 
-				<li class="tous"><img src=""></li>
-				<li class="tous"><img src=""></li>
-        <li class="tous"><img src=""></li>
-				<li class="tous"><img src=""></li>
-				<li class="tous"><img src=""></li>
-				<li class="tous"><img src=""></li>
-				<li class="tous"><img src=""></li>
-        <li class="tous"><img src=""></li>
-				<li class="tous"><img src=""></li>
-				<li class="tous"><img src=""></li>
+				<li class="tous" id="responsive-staff"><img src=""id="responsive-staff-img"></li>
+				<li class="tous" id="responsive-staff"><img src=""id="responsive-staff-img"></li>
+        <li class="tous" id="responsive-staff"><img src=""id="responsive-staff-img"></li>
+				<li class="tous" id="responsive-staff"><img src=""id="responsive-staff-img"></li>
+				<li class="tous" id="responsive-staff"><img src=""id="responsive-staff-img"></li>
+				<li class="tous" id="responsive-staff"><img src=""id="responsive-staff-img"></li>
+				<li class="tous" id="responsive-staff"><img src=""id="responsive-staff-img"></li>
+        <li class="tous" id="responsive-staff"><img src=""id="responsive-staff-img"></li>
+				<li class="tous" id="responsive-staff"><img src=""id="responsive-staff-img"></li>
+				<li class="tous" id="responsive-staff"><img src=""id="responsive-staff-img"></li>
 			</ul>
 		</div>
 

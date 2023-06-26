@@ -20,6 +20,7 @@ h2 {
     .rating-container {
       display: flex;
       align-items: center;
+      justify-content: center;
     }
 
     .star {
@@ -32,6 +33,16 @@ h2 {
     .star:hover,
     .star.selected {
       color: #ffcc00;
+    }
+
+    textarea {
+      display: flex;
+      margin-left: 30px;
+    }
+
+    input {
+      display: flex;
+      margin-left: 80px;
     }
 
     #comments {
@@ -47,7 +58,7 @@ h2 {
   </style>
 </head>
 <body>
-
+<div id="responsive-comments">
 <div id="comments">
     <h2>Les derniers avis laissés par la communauté !</h2>
     <?php
@@ -59,8 +70,11 @@ h2 {
       }
     ?>
   </div>
+</div>
 
-  <h2>Donnez-nous notre avis !</h2>
+
+  <h2 id="responsive-title-avis">Donnez-nous votre avis !</h2>
+  <div id="reponsive-form">
   <div class="rating-container">
     <span class="star" onclick="rate(1)">★</span>
     <span class="star" onclick="rate(2)">★</span>
@@ -69,11 +83,12 @@ h2 {
     <span class="star" onclick="rate(5)">★</span>
   </div>
 
-  <form action="process.php" method="POST">
-    <textarea name="comment" rows="4" cols="50" required placeholder="Vous appréciez notre serveur ? Faîtes le nous savoir !"></textarea>
+  <form action="process.php" method="POST" class="comment-section" id="responsive-comment">
+    <textarea name="comment" rows="4" cols="40" id="responsive-textarea" required placeholder="Vous appréciez notre serveur ? Faites le nous savoir !"></textarea>
     <br>
-    <input type="submit" value="Ajouter ma pierre à l'édifice">
+    <input id="responsive-input" type="submit" value="Ajouter ma pierre à l'édifice">
   </form>
+</div>
 
 
 

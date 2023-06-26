@@ -85,6 +85,15 @@ body > header > #navbar {
     background-color: #000000;
 }
 
+#nav-lateral-item {
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Iceland';
+    font-size: 20px;
+    color: white;
+    margin-right: 10px;
+}
+
 #nav-link {
     text-decoration: none;
     color: white;
@@ -853,6 +862,7 @@ span {
 #img-event {
   position: absolute; 
   margin-left: 10vw;
+  margin-top: 60px;
   }
 
   
@@ -860,9 +870,7 @@ span {
 
   @media screen and (max-width: 800px) {
 
-    main {
-      margin-top: 100px;
-    }
+
 
     header {
       display: block;
@@ -910,7 +918,6 @@ span {
       --middle: 3;
       --position: 1;
       pointer-events: none;
-      overflow: scroll;
     }
 
     .container {
@@ -924,9 +931,24 @@ span {
       background-color: transparent;
       z-index: 1;
     }
+
+#main_home {
+    height: 900px;
+    width: 100vw;
+  }
+
     #presentation_paragraph {
-      width: 90vw;
-      font-size: 20px;
+      height: 270px;
+      width: 95vw;
+      font-size: 13px;
+      margin-bottom: 460px;
+      display: flex;
+      overflow: auto;
+      overflow-y: scroll;
+    }
+
+    #btn-second-page {
+      margin-bottom: 80px;
     }
 
     #btn-discord {
@@ -988,5 +1010,104 @@ margin-top: 210px;
         margin: 10px;
         overflow: auto;
       }
+
+     
+      #About {
+        padding: 0;
+      }
+      #responsive-ios-segmented-control {
+        display: none;
+      }
+
+      #responsive-wrapper {
+        height: 400px;
+        width: 360px;
+        display: flex;
+        overflow-x: auto;
   }
 
+
+  #responsive-staff {
+    width: 90px;
+    height: 90px;
+  }
+
+  #responsive-staff-img {
+    margin-top: 0;
+    width: 100px;
+    height: 100px;
+  }
+
+  div.gallery ul li img:hover {
+    width: 200px;
+    height: 200px;
+    margin-top: -100px;
+    margin-left: -100px;
+    top: 100%;
+  left: 100%;
+  }
+
+  #img-event {
+    display: none;
+  }
+
+  #countdown {
+    margin-left: 0;
+    margin-top: 50px;
+    font-family: "Iceland";
+    color: white;
+  }
+
+  #timer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+#timer span {
+    font-size: 50px;
+    margin: 0 10px;
+  }
+
+  #presentation_event {
+    font-family: "Iceland";
+    color: white;
+    margin-left: 50px;
+    margin-top: 10px;
+    width: 80vw;
+    font-size: 25px;
+  }
+
+  #presentation-event-paragraphe {
+    height: 300px;
+    display: flex;
+    overflow-x: auto;
+  }
+
+  #responsive-comments {
+    display: none;
+  }
+
+#reponsive-form {
+  width: 80vw;
+  height: 80vh;
+  margin-top: 100px;
+}
+
+#reponsive_comment {
+  width: 80vw;
+}
+
+#responsive-textarea {
+  margin: 0;
+}
+
+#responsive-input {
+  margin: 0;
+}
+
+#responsive-title-avis {
+  font-size: 30px;
+}
+
+  }

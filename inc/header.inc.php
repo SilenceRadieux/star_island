@@ -55,7 +55,7 @@
                 <div id="nav-lateral-item">
                     <li>
                         <img src="./assets/pack_graphique/img-btn-tutoriels.png" alt="bouton tutoriels" height="25px">
-                        <a id="nav_tuto" href="#">Tutoriels</a>
+                        <a id="nav_tuto" href="https://docs.google.com/spreadsheets/d/1ca-sSQERai88NWyIMIXPckhgQ3li5AeXv7zzT1ux_I4/edit#gid=582164751" target="_blank">Tutoriels</a>
                     </li>
                     <li>
                         <img src="./assets/pack_graphique/img-btn-event.png" alt="bouton event" height="25px">

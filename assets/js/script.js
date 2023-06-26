@@ -24,18 +24,27 @@ if (actualPage === "http://localhost/star_island_final/serveur.php") {
     document.body.style.backgroundImage = "url('assets/pack_graphique/img-serveur-background.png')";
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundRepeat = "no-repeat";
+    if (screenWidth < 800) {
+      document.body.style.backgroundSize = "auto";
+    }
 }
 if (actualPage === "http://localhost/star_island_final/avis.php") {
     document.body.style.backgroundImage = "url('assets/pack_graphique/img-avis-background.png')";
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundPosition = "center"
     document.body.style.backgroundRepeat = "no-repeat";
+    if (screenWidth < 800) {
+      document.body.style.backgroundSize = "310%";
+    }
 }
 if (actualPage === "http://localhost/star_island_final/event.php") {
     document.body.style.backgroundImage = "url('assets/pack_graphique/img-event-background.png')";
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundPosition = "center"
     document.body.style.backgroundRepeat = "no-repeat";
+    if (screenWidth < 800) {
+      document.body.style.backgroundSize = "auto";
+    }
 }
 
 
