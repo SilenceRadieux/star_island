@@ -3,7 +3,7 @@ require_once '../inc/backheader.inc.php';  ?>
 
 
 
-
+<h1>Bienvenue dans ton back-office</h1>
 
 
 

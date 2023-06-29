@@ -3,7 +3,9 @@
 <div class="page-section" id="About">
     <div class="about-pos">
       <div class="section-title">
-        <h2>L'équipe</h2>
+      <div class="glitch-wrapper">
+   <div class="glitch" data-text="L'équipe">L'équipe</div>
+</div>
       </div>
       <div class="ios-segmented-control" id="responsive-ios-segmented-control">
         <span class="selection"></span>

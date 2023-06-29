@@ -1,5 +1,7 @@
 <main id="main_home " data-bs-dismiss="offcanvas">
-    <h1 id="title_main" >BIENVENUE SUR STAR'ISLAND</h1>
+<div class="glitch-wrapper">
+   <div class="glitch" data-text="Star'Island">Star'Island</div>
+</div>
     <div class="button-container">
                 <button onclick="window.location.href='avis.php';" id="btn-second-page" class="button">Donnez-nous votre avis !</button>
             </div>

@@ -1,5 +1,7 @@
 <main>
-<h1 id="title_main" >BIENVENUE SUR STAR'ISLAND</h1>
+<div class="glitch-wrapper">
+   <div class="glitch" data-text="Star'Island">Star'Island</div>
+</div>
 
 <div class="scroll-container">
 <div class="grid image-grid">
