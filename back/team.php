@@ -60,15 +60,15 @@ require_once '../inc/backheader.inc.php';
 <form action="" method="post" class="w-75 mx-auto mt-5 mb-5">
     <div class="form-group">
         <small class="text-danger">*</small>
-        <label for="role_team" class="form-label">Rôle de l'équipe</label>
-        <input name="role_team" id="role_team" placeholder="Rôle de l'équipe" type="text"
+        <label for="role_team" class="form-label">Rôle du membre de l'équipe</label>
+        <input name="role_team" id="role_team" placeholder="Rôle du membre de l'équipe" type="text"
                value="<?= $team['role_team'] ?? ''; ?>" class="form-control">
         <small class="text-danger"><?= $error ?? ''; ?></small>
     </div>
     <div class="form-group">
         <small class="text-danger">*</small>
-        <label for="nickname_team" class="form-label">Surnom de l'équipe</label>
-        <input name="nickname_team" id="nickname_team" placeholder="Surnom de l'équipe" type="text"
+        <label for="nickname_team" class="form-label">Pseudo du membre de l'équipe</label>
+        <input name="nickname_team" id="nickname_team" placeholder="Pseudo du membre de l'équipe" type="text"
                value="<?= $team['nickname_team'] ?? ''; ?>" class="form-control">
         <small class="text-danger"><?= $error ?? ''; ?></small>
     </div>

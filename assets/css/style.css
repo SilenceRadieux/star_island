@@ -263,6 +263,17 @@ border-radius:4px;
 cursor:pointer
 }
 
+.gauche {
+
+margin-right: 450px;
+text-align: start;
+}
+
+.droite {
+margin-left: 450px;
+text-align: start;
+}
+
 #btn-discord {
 position:fixed;
 bottom:5vh;

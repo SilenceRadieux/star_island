@@ -1,6 +1,8 @@
 <?php
 require_once '../config/function.php';
 
+$medias = execute("SELECT * FROM media")->fetchAll(PDO::FETCH_ASSOC);
+
 if (!empty($_POST)) {
     if (empty($_POST['rating_comment'])) {
         $error_rating = 'Ce champ est obligatoire';
@@ -19,24 +21,27 @@ if (!empty($_POST)) {
     }
 
     if (!isset($error_rating) && !isset($error_comment) && !isset($error_publish_date) && !isset($error_nickname)) {
+       // debug($_POST);die;
         if (empty($_POST['id_comment'])) {
-            execute("INSERT INTO comment (rating_comment, comment_text, publish_date_comment, nickname_comment) VALUES (:rating_comment, :comment_text, :publish_date_comment, :nickname_comment)", array(
+            execute("INSERT INTO comment (rating_comment, comment_text, publish_date_comment, nickname_comment, id_media) VALUES (:rating_comment, :comment_text, :publish_date_comment, :nickname_comment, :id_media)", array(
                 ':rating_comment' => $_POST['rating_comment'],
                 ':comment_text' => $_POST['comment_text'],
                 ':publish_date_comment' => $_POST['publish_date_comment'],
-                ':nickname_comment' => $_POST['nickname_comment']
+                ':nickname_comment' => $_POST['nickname_comment'],
+                ':id_media' => 12
             ));
 
             $_SESSION['messages']['success'][] = 'Commentaire ajouté';
             header('location: ./comment.php');
             exit();
         } else {
-            execute("UPDATE comment SET rating_comment = :rating_comment, comment_text = :comment_text, publish_date_comment = :publish_date_comment, nickname_comment = :nickname_comment WHERE id_comment = :id", array(
+            execute("UPDATE comment SET rating_comment = :rating_comment, comment_text = :comment_text, publish_date_comment = :publish_date_comment, nickname_comment = :nickname_comment, id_media = :id_media WHERE id_comment = :id", array(
                 ':id' => $_POST['id_comment'],
                 ':rating_comment' => $_POST['rating_comment'],
                 ':comment_text' => $_POST['comment_text'],
                 ':publish_date_comment' => $_POST['publish_date_comment'],
-                ':nickname_comment' => $_POST['nickname_comment']
+                ':nickname_comment' => $_POST['nickname_comment'],
+                ':id_media' => 12
             ));
 
             $_SESSION['messages']['success'][] = 'Commentaire modifié';
@@ -47,6 +52,7 @@ if (!empty($_POST)) {
 }
 
 $comments = execute("SELECT * FROM comment")->fetchAll(PDO::FETCH_ASSOC);
+$medias = execute("SELECT * FROM media m INNER JOIN comment c ON m.id_media = c.id_media")->fetchAll(PDO::FETCH_ASSOC);
 
 if (!empty($_GET) && isset($_GET['id']) && isset($_GET['a']) && $_GET['a'] == 'edit') {
     $comments = execute("SELECT * FROM comment WHERE id_comment = :id", array(
@@ -89,7 +95,7 @@ require_once '../inc/backheader.inc.php';
     <div class="form-group">
         <small class="text-danger">*</small>
         <label for="publish_date_comment" class="form-label">Date de publication du commentaire</label>
-        <input name="publish_date_comment" id="publish_date_comment" placeholder="Date de publication du commentaire" type="text" value="<?= $comment['publish_date_comment'] ?? ''; ?>" class="form-control">
+        <input name="publish_date_comment" id="publish_date_comment" placeholder="Date de publication du commentaire" type="date" value="<?= $comment['publish_date_comment'] ?? ''; ?>" class="form-control">
         <small class="text-danger"><?= $error_publish_date ?? ''; ?></small>
     </div>
     <div class="form-group">
@@ -98,6 +104,11 @@ require_once '../inc/backheader.inc.php';
         <input name="nickname_comment" id="nickname_comment" placeholder="Pseudo" type="text" value="<?= $comment['nickname_comment'] ?? ''; ?>" class="form-control">
         <small class="text-danger"><?= $error_nickname ?? ''; ?></small>
     </div>
+    <select name="id_media" id="page-select">
+    <option value="">--Sélectionnez le média--</option>
+    <?php foreach ($medias as $media): ?>
+        <option value="<?= $media['id_media']; ?>"><?= $media['title_media']; ?></option>
+    <?php endforeach; ?>
     <input type="hidden" name="id_comment" value="<?= $comment['id_comment'] ?? ''; ?>">
     <button type="submit" class="btn btn-primary mt-2">Valider</button>
 </form>

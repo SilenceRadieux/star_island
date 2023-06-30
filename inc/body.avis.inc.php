@@ -1,5 +1,7 @@
 <main>
 
+<?php $comments = execute("SELECT * FROM comment")->fetchAll(PDO::FETCH_ASSOC); ?>
+
 <head>
   <title>Rating Form</title>
   <style>
@@ -48,8 +50,8 @@ h2 {
     #comments {
         display: flex;
         flex-direction: column;
-        align-items: center;
       width: 80vw;
+      margin-left: 800px;
     }
 
     #comments p {
@@ -62,13 +64,24 @@ h2 {
 <div id="comments">
     <h2>Les derniers avis laissés par la communauté !</h2>
     <?php
-      // Replace with your logic to fetch and display the latest comments from a database or file
-      $latestComments = array();
-
-      foreach ($latestComments as $comment) {
-        echo "<p>" . htmlspecialchars($comment) . "</p>";
+      $direction = true;
+      foreach ($comments as $comment) { ?>
+      <?php 
+      if ($direction) {
+        $direction = false;
+        $choix ='droite';
+      } else {
+        $direction = true;
+        $choix ='gauche';
       }
-    ?>
+      ?>
+      <div class="latestComments <?= $choix ?>">
+       <p><?= htmlspecialchars($comment['rating_comment']) ?></p>
+       <p><?= htmlspecialchars($comment['nickname_comment']) ?></p>
+       <p><?= htmlspecialchars($comment['comment_text']) ?></p>
+       <p><?= htmlspecialchars($comment['publish_date_comment']) ?></p>
+      </div>
+     <?php } ?>
   </div>
 </div>
 
