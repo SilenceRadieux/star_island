@@ -1,6 +1,8 @@
 <?php
 require_once '../config/function.php';
 
+$medias = execute("SELECT * FROM media")->fetchAll(PDO::FETCH_ASSOC);
+
 if (!empty($_POST)) {
     if (empty($_POST['role_team'])) {
         $error = 'Ce champ est obligatoire';
@@ -10,7 +12,8 @@ if (!empty($_POST)) {
         if (empty($_POST['id_team'])) {
             execute("INSERT INTO team (role_team, nickname_team) VALUES (:role_team, :nickname_team)", array(
                 ':role_team' => $_POST['role_team'],
-                ':nickname_team' => $_POST['nickname_team']
+                ':nickname_team' => $_POST['nickname_team'],
+                ':id_media' => 14
             ));
 
             $_SESSION['messages']['success'][] = 'Équipe ajoutée';
@@ -20,7 +23,8 @@ if (!empty($_POST)) {
             execute("UPDATE team SET role_team=:role_team, nickname_team=:nickname_team WHERE id_team=:id", array(
                 ':id' => $_POST['id_team'],
                 ':role_team' => $_POST['role_team'],
-                ':nickname_team' => $_POST['nickname_team']
+                ':nickname_team' => $_POST['nickname_team'],
+                ':id_media' => 14
             ));
 
             $_SESSION['messages']['success'][] = 'Équipe modifiée';
@@ -30,7 +34,8 @@ if (!empty($_POST)) {
     }
 }
 
-$teams = execute("SELECT * FROM team")->fetchAll(PDO::FETCH_ASSOC);
+$teams = execute("SELECT t.*, m.* FROM media m INNER JOIN team_media tm ON tm.id_media = m.id_media INNER JOIN team t ON tm.id_team = t.id_team")
+    ->fetchAll(PDO::FETCH_ASSOC);
 
 if (!empty($_GET) && isset($_GET['id']) && isset($_GET['a']) && $_GET['a'] == 'edit') {
     $team = execute("SELECT * FROM team WHERE id_team=:id", array(
@@ -72,6 +77,12 @@ require_once '../inc/backheader.inc.php';
                value="<?= $team['nickname_team'] ?? ''; ?>" class="form-control">
         <small class="text-danger"><?= $error ?? ''; ?></small>
     </div>
+    <div class="form-group">
+    <small class="text-danger">*</small>
+    <label for="avatar" class="form-label">Avatar du membre de l'équipe</label>
+    <input name="avatar" id="avatar" type="file" class="form-control" value="<?= $team['id_team_media'] ?? ''; ?>" > 
+    <small class="text-danger"><?= $error ?? ''; ?></small>
+</div>
     <input type="hidden" name="id_team" value="<?= $team['id_team'] ?? ''; ?>">
     <button type="submit" class="btn btn-primary mt-2">Valider</button>
 </form>
@@ -81,6 +92,7 @@ require_once '../inc/backheader.inc.php';
     <tr>
         <th>Rôle</th>
         <th>Surnom</th>
+        <th>Avatar</th>
         <th class="text-center">Actions</th>
     </tr>
     </thead>
@@ -89,6 +101,7 @@ require_once '../inc/backheader.inc.php';
         <tr>
             <td><?= $team['role_team']; ?></td>
             <td><?= $team['nickname_team']; ?></td>
+            <td><?= $team['id_team_media']; ?></td>
             <td class="text-center">
                 <a href="?id=<?= $team['id_team']; ?>&a=edit" class="btn btn-outline-info">Modifier</a>
                 <a href="?id=<?= $team['id_team']; ?>&a=del" onclick="return confirm('Êtes-vous sûr ?')"

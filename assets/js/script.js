@@ -49,41 +49,6 @@ if (actualPage === "http://localhost/star_island_final/event.php") {
 
 
 
-//   function addComment() {
-
-//   var commentInput = document.getElementById('comment');
-//   const ratingInputs = document.querySelectorAll('.star-rating input');
-//   console.log(ratingInputs);
-//   ratingInputs.forEach(input => {
-//     input.addEventListener('click', function() {
-//       // Mettre à jour la valeur sélectionnée
-//       const selectedValue = this.value;
-//       console.log('Valeur sélectionnée :', selectedValue);
-//     });
-//   });
-
-//   // Récupérer le commentaire
-//   var commentValue = commentInput.value;
-
-//   // Créer un élément de commentaire
-//   var commentElement = document.createElement('div');
-//   commentElement.className = 'comment';
-//   commentElement.innerHTML = '<p>Note : ' + ratingValue + '/5</p>' +
-//                              '<p>Commentaire : ' + commentValue + '</p>';
-
-//   // Ajouter le commentaire à la liste des commentaires
-//   var commentsContainer = document.getElementById('comments');
-//   commentsContainer.appendChild(commentElement);
-
-//   // Réinitialiser les valeurs du formulaire
-//   commentInput.value = '';
-//   for (var i = 0; i < ratingInputs.length; i++) {
-//     ratingInputs[i].checked = false;
-//   }
-// }
-
-
-
 const staff= document.querySelectorAll('.tous');
 const options = document.querySelectorAll('input');
 options.forEach(option => {  
@@ -152,3 +117,4 @@ const countdownTimer = setInterval(function() {
 function padNumber(number) {
   return number.toString().padStart(2, "0");
 }
+

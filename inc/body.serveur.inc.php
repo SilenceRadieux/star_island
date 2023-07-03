@@ -1,5 +1,7 @@
 <main id="main-event">
 
+<?php $teams = execute("SELECT * FROM team")->fetchAll(PDO::FETCH_ASSOC);?>
+
 <div class="page-section" id="About">
     <div class="about-pos">
       <div class="section-title">
@@ -41,7 +43,13 @@
 	<div class="wrapper" id="responsive-wrapper">
 		<div class="gallery">
 			<ul>
-				<li class="tous admin" id="responsive-staff"><img src="./assets/pack_graphique/star_islannd/amanda.png" id="responsive-staff-img"></li>
+
+        <?php foreach($teams as $team) { ?>
+
+          <li class="tous <?= $team['role_team'] ?>"><img src=" <?= $team['id_media'] ?>"></li>
+
+        <?php } ?> 
+
         
 				<li class="tous admin" id="responsive-staff"><img src="./assets/pack_graphique/star_islannd/charmilia.png" id="responsive-staff-img"></li>
  
