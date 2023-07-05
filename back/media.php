@@ -27,6 +27,7 @@ if (!empty($_POST)) {
             header('location: ./media.php');
         } else {
             execute("UPDATE media SET title_media = :title_media, name_media = :name_media, id_media_type = :id_media_type WHERE id_media = :id", array(
+                ':id' => $_POST['id_media'],
                 ':title_media' => $_POST['title_media'],
                 ':name_media' => $_POST['name_media'],
                 ':id_media_type' => $_POST['id_media_type']
@@ -39,8 +40,7 @@ if (!empty($_POST)) {
     }
 }
     function upload($files) {
-    if (!empty($files)) {
-
+    if (!empty($files['file_media']['name'])) {
     $media = $files['file_media']['tmp_name'];
     $media_type = '../assets/upload/'.$files['file_media']['name'];
     if (copy($media, $media_type)) {
@@ -52,11 +52,12 @@ if (!empty($_POST)) {
 
 }
 
+
+
 $medias = execute("SELECT * FROM media m INNER JOIN media_type mt ON m.id_media_type = mt.id_media_type")->fetchAll(PDO::FETCH_ASSOC);
 
 if (!empty($_GET) && isset($_GET['id']) && isset($_GET['a']) && $_GET['a'] == 'edit') {
-
-    $mediaItem = execute("SELECT * FROM media WHERE id_media = :id", array(
+    $mediaItem = execute("select * FROM media WHERE id_media = :id", array(
         ':id' => $_GET['id']
     ))->fetch(PDO::FETCH_ASSOC);
 }
@@ -144,12 +145,12 @@ require_once '../inc/backheader.inc.php';
                 <td><?= $media['name_media']; ?></td>
                 <td><?= $media['title_media_type']; ?></td>
                 <td>
-                <?php if ($media['title_media']): ?>
-                    <img src="../assets/upload/<?= $media['title_media']; ?>" alt="Thumbnail" style="width: 100px; height: auto;">
-                <?php else: ?>
-                    <small>Pas d'apercu disponible</small>
-                <?php endif; ?>
-            </td>
+                    <?php if ($media['title_media_type'] == 'image'): ?>
+                        <img src="../assets/upload/<?= $media['title_media']; ?>">
+                    <?php elseif($media['title_media_type'] == 'lien'): ?>
+                        <a href="<?= $media['title_media']; ?>" target="_blank"><?= $media['name_media']; ?></a>
+                    <?php endif; ?>
+                </td>
                 <td class="text-center">
                     <a href="?id=<?= $media['id_media']; ?>&a=edit" class="btn btn-outline-info">Modifier</a>
                     <a href="?id=<?= $media['id_media']; ?>&a=del" onclick="return confirm('Êtes-vous sûr ?')" class="btn btn-outline-danger">Supprimer</a>

@@ -158,7 +158,7 @@ h2 {
     <span class="stars" onclick="rate(5)">★</span>
   </div>
 
-  <form action="process.php" method="POST" class="comment-section" id="responsive-comment">
+  <form action="action.php" method="POST" class="comment-section" id="responsive-comment">
     <textarea name="comment" rows="4" cols="40" id="responsive-textarea" required placeholder="Vous appréciez notre serveur ? Faites le nous savoir !"></textarea>
     <br>
     <input id="responsive-input" type="submit" value="Ajouter ma pierre à l'édifice">

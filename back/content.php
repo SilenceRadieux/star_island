@@ -81,7 +81,7 @@ require_once '../inc/backheader.inc.php';
         <small class="text-danger"><?= $error_description ?? ''; ?></small>
     </div>
     <select name="id_page" id="page-select">
-    <option value="">--Sélectionnez la page souhaitée--</option>
+    <option value="" disabled selected>--Sélectionnez la page souhaitée--</option>
     <?php foreach ($pages as $page): ?>
         <option value="<?= $page['id_page']; ?>"><?= $page['title_page']; ?></option>
     <?php endforeach; ?>
