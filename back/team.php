@@ -4,6 +4,7 @@ require_once '../config/function.php';
 $team_medias = execute("SELECT * FROM team_media")->fetchAll(PDO::FETCH_ASSOC);
 $medias = execute("SELECT * FROM media m INNER JOIN media_type mt ON m.id_media_type = mt.id_media_type")->fetchAll(PDO::FETCH_ASSOC);
 $teams = execute("SELECT * FROM team")->fetchAll(PDO::FETCH_ASSOC);
+$page = execute("SELECT * FROM `page` WHERE 'title_page'='team'")->fetchAll(PDO::FETCH_ASSOC);
 
 if (!empty($_POST)) {
    // var_dump($_POST); die;
@@ -22,7 +23,6 @@ if (!empty($_POST)) {
 
         
             if(!empty($_FILES['avatar']['name'])){
-              // die('ok');
                 $picture=date_format(new DateTime(), 'YmdHis').'-'.$_FILES['avatar']['name'];
                 copy($_FILES['avatar']['tmp_name'], '../assets/upload/'.$picture);
 
@@ -48,20 +48,20 @@ if (!empty($_POST)) {
 
    //   faire requête pour recup id avec type lien dans media_type
             foreach($_POST['social_media'] as $name=>$link){
+                if(!empty($link)){
+                    $lastLinkId =execute("INSERT INTO media (title_media, name_media, id_media_type, id_page) VALUES (:title_media, :name_media, :id_media_type, :id_page)", array(
+                    ':title_media'=>$link,
+                    ':name_media'=>$name.'-'.$_POST['nickname_team'] ,
+                    ':id_media_type'=> 28, 
+                    ':id_page'=>12), 'toto');
 
- $lastLinkId =execute("INSERT INTO media (title_media, name_media, id_media_type, id_page) VALUES (:title_media, :name_media, :id_media_type, :id_page)", array(
-                ':title_media'=>$link,
-               ':name_media'=>$name.'-'.$_POST['nickname_team'] ,
-              ':id_media_type'=> 28, 
-              ':id_page'=>12), 'toto');
-
-              execute("INSERT INTO team_media (id_media, id_team) VALUES (:id_media, :id_team)", array(
-                ':id_media' => $lastLinkId,
-                ':id_team' => $lastIdTeam
-            ));
+                execute("INSERT INTO team_media (id_media, id_team) VALUES (:id_media, :id_team)", array(
+                    ':id_media' => $lastLinkId,
+                    ':id_team' => $lastIdTeam
+                ));
 
 
-            }
+                 } }
 
     
 
@@ -123,8 +123,13 @@ require_once '../inc/backheader.inc.php';
     <div class="form-group">
         <small class="text-danger">*</small>
         <label for="role_team" class="form-label">Rôle du membre de l'équipe</label>
-        <input name="role_team" id="role_team" placeholder="Rôle du membre de l'équipe" type="text"
-               value="<?= $team['role_team'] ?? ''; ?>" class="form-control">
+        <select name="role_team" id="role_team"> 
+            <option value="Admin">Admin</option>
+            <option value="Staff/Modérateur">Staff/Modérateur</option>
+            <option value="Développeur">Développeur</option>
+            <option value="Mapper">Mapper</option>
+            <option value="Helper">Helper</option>
+        </select>
         <small class="text-danger"><?= $error ?? ''; ?></small>
     </div>
     <div class="form-group">
@@ -232,7 +237,7 @@ require_once '../inc/backheader.inc.php';
         <td>
             <?php foreach ($medias as $media): ?>
                 <?php if ($media['title_media_type'] == 'image'): ?>
-                    <img src="../assets/upload/<?= $media['title_media']; ?>">
+                    <img src="../assets/upload/<?= $media['title_media']; ?>" width="100px" height="100px">
                 <?php endif; ?>
             <?php endforeach; ?>
         </td>

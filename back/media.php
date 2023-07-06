@@ -146,7 +146,7 @@ require_once '../inc/backheader.inc.php';
                 <td><?= $media['title_media_type']; ?></td>
                 <td>
                     <?php if ($media['title_media_type'] == 'image'): ?>
-                        <img src="../assets/upload/<?= $media['title_media']; ?>">
+                        <img src="../assets/upload/<?= $media['title_media']; ?>" width="150px">
                     <?php elseif($media['title_media_type'] == 'lien'): ?>
                         <a href="<?= $media['title_media']; ?>" target="_blank"><?= $media['name_media']; ?></a>
                     <?php endif; ?>

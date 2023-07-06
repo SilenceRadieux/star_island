@@ -93,26 +93,6 @@ lightbox.addEventListener('click', function() {
 
 
 
-const countdownDate = new Date("June 30, 2023 23:59:59").getTime();
-const countdownTimer = setInterval(function() {
-  const now = new Date().getTime();
-  const distance = countdownDate - now;
-
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  document.getElementById("days").textContent = padNumber(days);
-  document.getElementById("hours").textContent = padNumber(hours);
-  document.getElementById("minutes").textContent = padNumber(minutes);
-  document.getElementById("seconds").textContent = padNumber(seconds);
-
-  if (distance < 0) {
-    clearInterval(countdownTimer);
-    document.getElementById("countdown").innerHTML = "<h1>Countdown Finished!</h1>";
-  }
-}, 1000);
 
 function padNumber(number) {
   return number.toString().padStart(2, "0");

@@ -30,7 +30,7 @@ if (!empty($_POST)) {
     }
 }
 
-$events = execute("SELECT * FROM event")->fetchAll(PDO::FETCH_ASSOC);
+$events = execute("SELECT * FROM `event`")->fetchAll(PDO::FETCH_ASSOC);
 
 if (!empty($_GET) && isset($_GET['id']) && isset($_GET['a']) && $_GET['a'] == 'edit') {
     $events = execute("SELECT * FROM event WHERE id_event=:id", array(

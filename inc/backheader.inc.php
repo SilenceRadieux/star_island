@@ -162,9 +162,8 @@
 
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link " href="<?=  BASE_PATH; ?>" role="button">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Voir le site</span>
-                            <img class="img-profile rounded-circle"
-                                 src="">
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Retourner sur Star'Island</span>
+                            
                         </a>
 
                     </li>

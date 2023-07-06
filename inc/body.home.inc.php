@@ -1,7 +1,15 @@
 <main id="main_home " data-bs-dismiss="offcanvas">
 
-<?php $contents = execute("SELECT * FROM content")->fetchAll(PDO::FETCH_ASSOC); ?>
-
+<?php $page = execute("SELECT * FROM `page` WHERE title_page = 'Home'")->fetch(PDO::FETCH_ASSOC); 
+?>
+<?php $contents = execute("SELECT * FROM content ")->fetchAll(PDO::FETCH_ASSOC); ?>
+<?php
+$contentsArray;
+foreach ($contents as $content) { 
+    if ($content['id_page'] == $page['id_page']) {
+        $contentsArray[$content['title_content']] = $content; 
+    } 
+} ?>
 <div class="glitch-wrapper">
    <div class="glitch" data-text="Star'Island">Star'Island</div>
 </div>
@@ -14,9 +22,7 @@
   <input id="acc_gal_btn" class="radio-btn" type="radio" name="position" />
   <main id="carousel">
     <div id="presentation_paragraph" class="item" >
-    <?php foreach ($contents as $content) { ?>  
-      <p><?= $content['description_content'] ?></p>
-    <?php } ?>
+      <p><?= $contentsArray['Présentation accueil']['description_content'] ?></p>
     </div>
     <div class="item">
     <div id="carouselExampleControls" class="carousel slide" data-mdb-ride="carousel">
@@ -37,3 +43,4 @@
 
 
 </main>
+
