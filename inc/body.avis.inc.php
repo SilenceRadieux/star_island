@@ -1,6 +1,7 @@
 <main>
 
 <?php $comments = execute("SELECT * FROM comment ORDER BY publish_date_comment DESC")->fetchAll(PDO::FETCH_ASSOC);?>
+<?php $medias = execute("SELECT * FROM media m INNER JOIN comment c ON m.id_media = c.id_media")->fetchAll(PDO::FETCH_ASSOC); ?>
 
 <head>
   <title>Rating Form</title>
@@ -35,6 +36,12 @@ h2 {
     .stars:hover,
     .stars.selected {
       color: #ffcc00;
+    }
+
+    .comment-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     textarea {
@@ -158,19 +165,38 @@ h2 {
     <span class="stars" onclick="rate(5)">★</span>
   </div>
 
-  <form action="action.php" method="POST" class="comment-section" id="responsive-comment">
-    <textarea name="comment" rows="4" cols="40" id="responsive-textarea" required placeholder="Vous appréciez notre serveur ? Faites le nous savoir !"></textarea>
+  
+<?php
+  if (!empty($_POST['comment_text']))  {
+     execute("INSERT INTO comment (title_media, rating_comment, comment_text, publish_date_comment, nickname_comment, id_media) VALUES (:title_media, :rating_comment, :comment_text, :publish_date_comment, :nickname_comment, :id_media)", array(
+      ':title_media' => $_POST['title_media'],
+      ':rating_comment' => $_POST['rating_comment'],
+      ':comment_text' => $_POST['comment_text'],
+      ':publish_date_comment' => date('Y-m-d'),
+      ':nickname_comment' => $_POST['nickname_comment'],
+      ':id_media' => $_POST['title_media']
+  ));
+
+     }?>
+    
+
+  <form action="" method="POST" class="comment-section" id="responsive-comment">
+    <textarea name="comment_text" rows="4" cols="40" id="responsive-textarea" required placeholder="Vous appréciez notre serveur ? Faites le nous savoir !"></textarea>
     <br>
+    <input type="hidden" name="rating_comment" id="rating_comment_PHP" value="5">
+    <input type="hidden" name="nickname_comment" id="responsive-input" value="Anonymous<?php echo rand(100000, 999999); ?>">
     <input id="responsive-input" type="submit" value="Ajouter ma pierre à l'édifice">
   </form>
 </div>
 
 
 
-  <script>
+
+  <script defer>
     function rate(stars) {
+      const rating = document.querySelector("#rating_comment_PHP");
       const ratingContainer = document.querySelector(".rating-container");
-      const starsList = ratingContainer.querySelectorAll(".star");
+      const starsList = ratingContainer.querySelectorAll(".stars");
 
       for (let i = 0; i < starsList.length; i++) {
         if (i < stars) {
@@ -179,6 +205,7 @@ h2 {
           starsList[i].classList.remove("selected");
         }
       }
+      rating.value = stars;
     }
   </script>
 </body>

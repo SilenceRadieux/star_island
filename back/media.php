@@ -13,7 +13,7 @@ if (!empty($_POST)) {
     if (empty($_POST['name_media'])) {
         $error_name = 'Ce champ est obligatoire';
     }
-    
+
     if (!isset($error_title) && !isset($error_name)) {
 
         if (empty($_POST['id_media'])) {
@@ -21,7 +21,8 @@ if (!empty($_POST)) {
                 ':title_media' => $_POST['title_media'],
                 ':name_media' => $_POST['name_media'],
                 ':id_media_type' => $_POST['id_media_type']
-            ));
+            )
+            );
             upload($_FILES);
             $_SESSION['messages']['success'][] = 'Média ajouté';
             header('location: ./media.php');
@@ -31,7 +32,8 @@ if (!empty($_POST)) {
                 ':title_media' => $_POST['title_media'],
                 ':name_media' => $_POST['name_media'],
                 ':id_media_type' => $_POST['id_media_type']
-            ));
+            )
+            );
             upload($_FILES);
             $_SESSION['messages']['success'][] = 'Média modifié';
             header('location: ./media.php');
@@ -39,15 +41,16 @@ if (!empty($_POST)) {
         }
     }
 }
-    function upload($files) {
+function upload($files)
+{
     if (!empty($files['file_media']['name'])) {
-    $media = $files['file_media']['tmp_name'];
-    $media_type = '../assets/upload/'.$files['file_media']['name'];
-    if (copy($media, $media_type)) {
-        echo '<small class="text-success">Fichier copié</small>';
-    } else {
-        echo '<small class="text-danger">Fichier non copié</small>';
-    }
+        $media = $files['file_media']['tmp_name'];
+        $media_type = '../assets/upload/' . $files['file_media']['name'];
+        if (copy($media, $media_type)) {
+            echo '<small class="text-success">Fichier copié</small>';
+        } else {
+            echo '<small class="text-danger">Fichier non copié</small>';
+        }
     }
 
 }
@@ -59,13 +62,15 @@ $medias = execute("SELECT * FROM media m INNER JOIN media_type mt ON m.id_media_
 if (!empty($_GET) && isset($_GET['id']) && isset($_GET['a']) && $_GET['a'] == 'edit') {
     $mediaItem = execute("select * FROM media WHERE id_media = :id", array(
         ':id' => $_GET['id']
-    ))->fetch(PDO::FETCH_ASSOC);
+    )
+    )->fetch(PDO::FETCH_ASSOC);
 }
 
 if (!empty($_GET) && isset($_GET['id']) && isset($_GET['a']) && $_GET['a'] == 'del') {
     $success = execute("DELETE FROM media WHERE id_media = :id", array(
         ':id' => $_GET['id']
-    ));
+    )
+    );
 
     if ($success) {
         $_SESSION['messages']['success'][] = 'Média supprimé';
@@ -85,14 +90,20 @@ require_once '../inc/backheader.inc.php';
     <div class="form-group">
         <small class="text-danger">*</small>
         <label for="title_media" class="form-label">Titre du média</label>
-        <input name="title_media" id="title_media" placeholder="Titre du média" type="text" value="<?= $mediaItem['title_media'] ?? ''; ?>" class="form-control">
-        <small class="text-danger"><?= $error_title ?? ''; ?></small>
+        <input name="title_media" id="title_media" placeholder="Titre du média" type="text"
+            value="<?= $mediaItem['title_media'] ?? ''; ?>" class="form-control">
+        <small class="text-danger">
+            <?= $error_title ?? ''; ?>
+        </small>
     </div>
     <div class="form-group">
         <small class="text-danger">*</small>
         <label for="name_media" class="form-label">Nom du média</label>
-        <input name="name_media" id="name_media" placeholder="Nom du média" type="text" value="<?= $mediaItem['name_media'] ?? ''; ?>" class="form-control">
-        <small class="text-danger"><?= $error_name ?? ''; ?></small>
+        <input name="name_media" id="name_media" placeholder="Nom du média" type="text"
+            value="<?= $mediaItem['name_media'] ?? ''; ?>" class="form-control">
+        <small class="text-danger">
+            <?= $error_name ?? ''; ?>
+        </small>
     </div>
     <div class="form-group">
         <select name="id_media_type" id="id_media_type">
@@ -102,7 +113,7 @@ require_once '../inc/backheader.inc.php';
             <?php endforeach; ?>
         </select>
         <script>
-            document.getElementById('id_media_type').onchange = function() {
+            document.getElementById('id_media_type').onchange = function () {
                 var selectedValue = this.options[this.selectedIndex].text;
                 var linkInput = document.getElementById('link_input');
                 var fileMedia = document.getElementById('file_media');
@@ -139,21 +150,28 @@ require_once '../inc/backheader.inc.php';
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($medias as $media) : ?>
+        <?php foreach ($medias as $media): ?>
             <tr>
-                <td><?= $media['title_media']; ?></td>
-                <td><?= $media['name_media']; ?></td>
-                <td><?= $media['title_media_type']; ?></td>
+                <td>
+                    <?= $media['title_media']; ?>
+                </td>
+                <td>
+                    <?= $media['name_media']; ?>
+                </td>
+                <td>
+                    <?= $media['title_media_type']; ?>
+                </td>
                 <td>
                     <?php if ($media['title_media_type'] == 'image'): ?>
                         <img src="../assets/upload/<?= $media['title_media']; ?>" width="150px">
-                    <?php elseif($media['title_media_type'] == 'lien'): ?>
+                    <?php elseif ($media['title_media_type'] == 'lien'): ?>
                         <a href="<?= $media['title_media']; ?>" target="_blank"><?= $media['name_media']; ?></a>
                     <?php endif; ?>
                 </td>
                 <td class="text-center">
                     <a href="?id=<?= $media['id_media']; ?>&a=edit" class="btn btn-outline-info">Modifier</a>
-                    <a href="?id=<?= $media['id_media']; ?>&a=del" onclick="return confirm('Êtes-vous sûr ?')" class="btn btn-outline-danger">Supprimer</a>
+                    <a href="?id=<?= $media['id_media']; ?>&a=del" onclick="return confirm('Êtes-vous sûr ?')"
+                        class="btn btn-outline-danger">Supprimer</a>
                 </td>
             </tr>
         <?php endforeach; ?>

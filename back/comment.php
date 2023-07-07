@@ -2,6 +2,7 @@
 require_once '../config/function.php';
 
 $medias = execute("SELECT * FROM media")->fetchAll(PDO::FETCH_ASSOC);
+$comments = execute("SELECT * FROM comment")->fetchAll(PDO::FETCH_ASSOC);
 
 if (!empty($_POST)) {
     if (empty($_POST['rating_comment'])) {
@@ -28,7 +29,7 @@ if (!empty($_POST)) {
                 ':comment_text' => $_POST['comment_text'],
                 ':publish_date_comment' => $_POST['publish_date_comment'],
                 ':nickname_comment' => $_POST['nickname_comment'],
-                ':id_media' => 12
+                ':id_media' => $_POST['title_media']
             ));
 
             $_SESSION['messages']['success'][] = 'Commentaire ajouté';
@@ -41,7 +42,7 @@ if (!empty($_POST)) {
                 ':comment_text' => $_POST['comment_text'],
                 ':publish_date_comment' => $_POST['publish_date_comment'],
                 ':nickname_comment' => $_POST['nickname_comment'],
-                ':id_media' => 12
+                ':id_media' => $_POST['title_media']
             ));
 
             $_SESSION['messages']['success'][] = 'Commentaire modifié';
