@@ -1,7 +1,8 @@
 <main id="main-event">
 
-  <?php $teams = execute("SELECT * FROM team t INNER JOIN team_media tm ON t.id_team = tm.id_team INNER JOIN media m ON tm.id_media = m.id_media INNER JOIN media_type mt ON m.id_media_type = mt.id_media_type")->fetchAll(PDO::FETCH_ASSOC); ?>
-
+  
+  <?php $teams = execute("SELECT * FROM team")->fetchAll(PDO::FETCH_ASSOC); ?>
+  <?php $medias = execute("SELECT * FROM media")->fetchAll(PDO::FETCH_ASSOC); ?>
 
   <div class="page-section" id="About">
     <div class="about-pos">
@@ -44,20 +45,45 @@
   <div class="wrapper" id="responsive-wrapper">
     <div class="gallery">
       <ul>
-        <?php foreach ($teams as $team) {; ?>
+        <?php foreach ($teams as $team) {
+          $medias = execute("SELECT m.*, mt.* FROM team t INNER JOIN team_media tm ON t.id_team = tm.id_team INNER JOIN media m ON tm.id_media = m.id_media INNER JOIN media_type mt ON m.id_media_type = mt.id_media_type WHERE tm.id_team=:team_id", array(':team_id' => $team['id_team']))->fetchAll(PDO::FETCH_ASSOC); ?> 
+          
+      
           <li class="tous <?= $team['role_team'] ?>">
-            <p> <?php echo $team['nickname_team']; ?> </p>
-            <p> <?php echo $team['role_team']; ?> </p>       
-            <?php if ($team['title_media_type'] == 'lien' && !empty($team['title_media'])): ?>
-              <a href="<?= $team['title_media']; ?>" target="_blank"><?= $team['name_media']; ?></a>
-            <?php elseif ($team['title_media_type'] == 'image'): ?>
-              <img src="./assets/upload/<?= $team['title_media'] ?>"> 
+            <div class="team-infos">
+              <p> <?php echo $team['nickname_team']; ?> </p>
+              <p> <?php echo $team['role_team']; ?> </p>  
+            </div> 
+            <?php foreach ($medias as $media) { ?>
+            <div class="team-avatar">
+            <?php if ($media['title_media_type'] == 'image'): ?>
+              <img src="./assets/upload/<?= $media['title_media']; ?>">
+            </div>
+            <div class="team-link"> 
+            <?php elseif ($media['title_media_type'] == 'lien' && !empty($media['title_media'])):  ?>
+              <a href="<?= $media['title_media']; ?>" target="_blank"><?= $media['name_media']; ?></a>
+            </div>
             <?php endif; ?>
+            <?php } ?>
+            
           </li>
         <?php } ?>
       </ul>
     </div>
+  </div>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+  var images = document.querySelectorAll('.gallery img');
+  var teamLink = document.querySelectorAll('.team-link');
+
+  images.forEach(function(image, index) {
+    image.addEventListener('click', function() {
+      teamLink[index].classList.toggle('dropdown');
+    });
+  });
+});
+  </script>
     <style>
       /* Reset default styles */
       * {
