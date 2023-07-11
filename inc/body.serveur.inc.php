@@ -1,7 +1,7 @@
 <main id="main-event">
 
-  
-  <?php $teams = execute("SELECT * FROM team")->fetchAll(PDO::FETCH_ASSOC); ?>
+
+  <?php $teams = execute("SELECT * FROM team ORDER BY nickname_team ASC")->fetchAll(PDO::FETCH_ASSOC); ?>
   <?php $medias = execute("SELECT * FROM media")->fetchAll(PDO::FETCH_ASSOC); ?>
 
   <div class="page-section" id="About">
@@ -14,7 +14,7 @@
       <div class="ios-segmented-control" id="responsive-ios-segmented-control">
         <span class="selection"></span>
         <div class="option">
-          <input type="radio" id="tous" name="sample" value="tous" checked>
+          <input  type="radio" id="tous" name="sample" value="tous" checked>
           <label for="tous"><span>Tous</span></label>
         </div>
         <div class="option">
@@ -43,116 +43,126 @@
   </div>
 
   <div class="wrapper" id="responsive-wrapper">
-    <div class="gallery">
-      <ul>
-        <?php foreach ($teams as $team) {
-          $medias = execute("SELECT m.*, mt.* FROM team t INNER JOIN team_media tm ON t.id_team = tm.id_team INNER JOIN media m ON tm.id_media = m.id_media INNER JOIN media_type mt ON m.id_media_type = mt.id_media_type WHERE tm.id_team=:team_id", array(':team_id' => $team['id_team']))->fetchAll(PDO::FETCH_ASSOC); ?> 
-          
-      
-          <li class="tous <?= $team['role_team'] ?>">
-            <div class="team-infos">
-              <p> <?php echo $team['nickname_team']; ?> </p>
-              <p> <?php echo $team['role_team']; ?> </p>  
-            </div> 
-            <?php foreach ($medias as $media) { ?>
-            <div class="team-avatar">
-            <?php if ($media['title_media_type'] == 'image'): ?>
-              <img src="./assets/upload/<?= $media['title_media']; ?>">
-            </div>
-            <div class="team-link"> 
-            <?php elseif ($media['title_media_type'] == 'lien' && !empty($media['title_media'])):  ?>
-              <a href="<?= $media['title_media']; ?>" target="_blank"><?= $media['name_media']; ?></a>
-            </div>
+  <div class="gallery">
+    <ul>
+      <?php foreach ($teams as $team) {
+        $medias = execute("SELECT m.*, mt.title_media_type FROM team t INNER JOIN team_media tm ON t.id_team = tm.id_team INNER JOIN media m ON tm.id_media = m.id_media INNER JOIN media_type mt ON m.id_media_type = mt.id_media_type WHERE tm.id_team=:team_id", array(':team_id' => $team['id_team']))->fetchAll(PDO::FETCH_ASSOC);
+        $newMedias = [];
+        foreach ($medias as $key => $media) {
+          $newMedias[$media['name_media']][$media['title_media_type']] = $media;
+        }
+        $medias = $newMedias;
+        ?>
+        <li class="tous <?= $team['role_team'] ?>">
+          <div class="team-infos">
+            <p>
+              <?php echo $team['nickname_team']; ?>
+            </p>
+            <p>
+              <?php echo $team['role_team']; ?>
+            </p>
+          </div>
+          <?php foreach ($medias as $media) { ?>
+            <?php if (empty($media['lien'])): ?>
+              <div class="team-avatar">
+                <img src="./assets/upload/<?= $media['image']['title_media']; ?>">
+              </div>
+            <?php else: ?>
+              <div class="team-link ">
+                <a href="<?= $media['lien']['title_media'] ?? ''; ?>" target="_blank">
+                  <img src="./assets/upload/<?= $media['image']['title_media']; ?>">
+                </a>
+              </div>
             <?php endif; ?>
-            <?php } ?>
-            
-          </li>
-        <?php } ?>
-      </ul>
-    </div>
+          <?php } ?>
+        </li>
+      <?php } ?>
+    </ul>
   </div>
+</div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-  var images = document.querySelectorAll('.gallery img');
-  var teamLink = document.querySelectorAll('.team-link');
-
-  images.forEach(function(image, index) {
-    image.addEventListener('click', function() {
-      teamLink[index].classList.toggle('dropdown');
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var images = document.querySelectorAll('.team-avatar');
+    var teamLink = document.querySelectorAll('.team-link');
+    images.forEach(function (image) {
+      image.addEventListener('click', function () {
+        image.nextElementSibling.classList.add('show');
+        image.nextElementSibling.classList.remove('.team-avatar');
+      });
     });
   });
-});
-  </script>
-    <style>
-      /* Reset default styles */
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
+</script>
 
-      /* Global styles */
-      body {
-        font-family: 'Iceland';
-        line-height: 1.5;
-      }
+  <style>
+    /* Reset default styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-      /* Page section */
-      .page-section {
-        padding: 40px;
-      }
+    /* Global styles */
+    body {
+      font-family: 'Iceland';
+      line-height: 1.5;
+    }
 
-      /* Section title */
-      .section-title {
-        text-align: center;
-        margin-bottom: 20px;
-      }
+    /* Page section */
+    .page-section {
+      padding: 40px;
+    }
 
-      .section-title h2 {
-        font-size: 60px;
-        margin-top: 0;
-        margin-bottom: 40px;
-        font-weight: bold;
-        color: #333;
-      }
+    /* Section title */
+    .section-title {
+      text-align: center;
+      margin-bottom: 20px;
+    }
 
-      .line {
-        width: 60px;
-        height: 2px;
-        margin: 10px auto;
-        background-color: #333;
-      }
+    .section-title h2 {
+      font-size: 60px;
+      margin-top: 0;
+      margin-bottom: 40px;
+      font-weight: bold;
+      color: #333;
+    }
 
-      /* Radio button styles */
-      .ios-segmented-control {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 20px;
-      }
+    .line {
+      width: 60px;
+      height: 2px;
+      margin: 10px auto;
+      background-color: #333;
+    }
 
-      .option {
-        margin: 0 10px;
-      }
+    /* Radio button styles */
+    .ios-segmented-control {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
 
-      .option input[type="radio"] {
-        display: none;
-      }
+    .option {
+      margin: 0 10px;
+    }
 
-      .option label {
-        cursor: pointer;
-        padding: 10px 15px;
-        border-radius: 4px;
-        background-color: white;
-      }
+    .option input[type="radio"] {
+      display: none;
+    }
 
-      .option label:hover {
-        background-color: #ddd;
-      }
+    .option label {
+      cursor: pointer;
+      padding: 10px 15px;
+      border-radius: 4px;
+      background-color: white;
+    }
 
-      .option input[type="radio"]:checked+label {
-        background-color: #333;
-        color: #fff;
-      }
-    </style>
+    .option label:hover {
+      background-color: #ddd;
+    }
+
+    .option input[type="radio"]:checked+label {
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
 </main>

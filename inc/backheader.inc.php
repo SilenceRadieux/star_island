@@ -57,9 +57,8 @@
             gestion
         </div>
 
-        <hr class="sidebar-divider d-none d-md-block">
-
-        <li class="nav-item">
+        <hr class="sidebar-divider d-none d-md-block" style="display:none">
+        <li class="nav-item" style="display:none">
             <a class="nav-link collapsed" href="<?= BASE_PATH.'back/media_type.php'; ?>" >
                 <i class="fas fa-fw fa-wrench"></i>
                 <span>Gestion media type</span>
@@ -67,8 +66,8 @@
         </li>
 
 
-        <hr class="sidebar-divider">
-        <li class="nav-item">
+        <hr class="sidebar-divider" style="display: none" >
+        <li class="nav-item" style="display: none">
             <a class="nav-link collapsed" href="<?= BASE_PATH.'back/page.php'; ?>" >
                 <i class="fas fa-fw fa-wrench"></i>
                 <span>Gestion page</span>
@@ -76,7 +75,7 @@
         </li>
 
 
-        <hr class="sidebar-divider">
+        <hr class="sidebar-divider" style="display:none">
         <li class="nav-item">
             <a class="nav-link collapsed" href="<?= BASE_PATH.'back/content.php'; ?>" >
                 <i class="fas fa-fw fa-wrench"></i>

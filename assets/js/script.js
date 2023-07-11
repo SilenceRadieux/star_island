@@ -54,7 +54,7 @@ const options = document.querySelectorAll('input');
 options.forEach(option => {  
   option.addEventListener('input', function() {
   staff.forEach(staff => {
-    staff.style.display = 'flex';
+    staff.style.display = 'block';
     if (!staff.classList.contains(this.value)) {
     staff.style.display = 'none';
     }

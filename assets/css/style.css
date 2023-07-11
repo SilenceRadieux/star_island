@@ -1036,6 +1036,10 @@ div.gallery ul li img:hover {
   display: none;
 }
 
+.show {
+  display: block;
+}
+
 .team-link.dropdown {
   display: block;
   text-decoration: none;
